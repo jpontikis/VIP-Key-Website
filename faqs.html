@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VIP Key</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0e0f12;
+  --text: #fff;
+  --muted: #cfd2d6;
+  --gold: #caa25a;
+  --radius: 18px;
+  --shadow: 0 12px 40px rgba(0,0,0,.35);
+  --font: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial;
+  --font-size: 14px;
+}
+
+/* ===== Global ===== */
+* { box-sizing: border-box; }
+body {
+  margin:0;
+  font-family: var(--font);
+  font-size: var(--font-size);
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+h1,h2,h3 { margin:0 0 .8rem; font-weight:600; text-transform:uppercase; }
+p { margin:0 0 1rem; }
+
+/* Navbar */
+.navbar { background:#111; padding:.8rem 1rem; }
+.navbar .navbar-brand { color:var(--gold); font-weight:700; font-size:1.2rem; }
+.navbar .nav-link { color:#fff; margin-left:1rem; }
+.navbar .nav-link:hover,
+.navbar .nav-item.active .nav-link { color:var(--gold); }
+
+/* Hero */
+.hero-wrap {
+  position:relative;
+  min-height:100vh;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  text-align:center;
+}
+.hero-wrap .overlay {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.55);
+}
+.hero-wrap .text { position:relative; z-index:2; }
+
+/* Buttons */
+.btn {
+  display:inline-block; padding:.7rem 1.4rem;
+  border:1.5px solid var(--gold);
+  border-radius:999px;
+  font-weight:600;
+  background:transparent;
+  color:var(--text);
+  transition:.25s;
+}
+.btn:hover { background:var(--gold); color:#111; transform:translateY(-2px); }
+
+/* Content section */
+.content {
+  padding:3rem 1.5rem;
+  background: radial-gradient(80% 60% at 50% 0%, rgba(202,162,90,.12), transparent 60%), linear-gradient(#101216, #0e0f12);
+}
+.content .card {
+  max-width:900px; margin:auto;
+  background:#121419;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:var(--radius);
+  padding:2rem;
+  box-shadow:var(--shadow);
+}
+
+/* Services cards */
+.wrapper { max-width:1200px; margin:auto; padding:40px 20px; }
+.cards {
+  display:grid; gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+.cards .card {
+  background:#1a1a1a;
+  border-radius:var(--radius);
+  padding:24px;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+.cards .card:hover { transform:translateY(-4px); box-shadow:0 0 20px var(--gold); }
+.icon { width:48px; height:48px; color:var(--gold); margin-bottom:12px; }
+.icon svg { width:100%; height:100%; display:block; }
+
+/* Portfolio */
+.portfolio-section {
+  background: radial-gradient(80% 60% at 50% 0%, rgba(202,162,90,.12), transparent 60%), linear-gradient(#101216,#0e0f12);
+  color:#fff; 
+  padding:4rem 1.5rem;
+}
+
+.filters { 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:12px; 
+  justify-content:center; 
+  margin-bottom:30px; 
+}
+
+.filters button {
+  border:2px solid var(--gold); 
+  background:transparent; 
+  color:#fff;
+  padding:8px 18px; 
+  border-radius:25px; 
+  font-size:14px; 
+  cursor:pointer; 
+  transition:.2s;
+}
+.filters button.active, 
+.filters button:hover { 
+  background:var(--gold); 
+  color:#000; 
+}
+
+/* ✅ Grid 4 στη σειρά */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid .card { 
+  background:#2a2a2a; 
+  border-radius:var(--radius); 
+  overflow:hidden; 
+  transition:.2s; 
+}
+.grid .card:hover { 
+  transform:translateY(-5px); 
+  box-shadow:0 0 15px var(--gold); 
+}
+/* Βοηθά εικόνες και κείμενο να «κάθονται» ωραία */
+.grid .card img {
+  width: 100%;
+  display: block;
+  /* aspect-ratio: 16/9;  <-- αν το είχες βάλει */
+  /* object-fit: cover;   <-- αν το είχες βάλει */
+}
+.grid .card-body { 
+  padding:16px 20px; 
+}
+.grid .card h3 { 
+  font-size:15px; 
+  text-transform:uppercase; 
+  color:#fff; 
+  margin:0 0 6px; 
+}
+.grid .card h3::before {
+  content:""; 
+  display:inline-block; 
+  width:3px; 
+  height:14px; 
+  background:var(--gold);
+  margin-right:8px; 
+  vertical-align:middle;
+}
+.grid .card p { 
+  font-size:13px; 
+  color:#aaa; 
+}
+
+.hero-wrap,
+.content, 
+.services-section,
+.portfolio-section {
+  margin-bottom: 50;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.grid .card h3,
+.grid .card p,
+.grid .card li {
+  word-break: normal;
+  overflow-wrap: break-word; /* ή: anywhere */
+  hyphens: auto;             /* να μπαίνουν διακριτικά παύλες όπου γίνεται */
+}
+
+/* Κρύβουμε ό,τι φιλτράρεται */
+.is-hidden { 
+  display: none !important; 
+}
+
+/* Expanded details card που μπαίνει στο grid σαν επιπλέον item */
+.card--details {
+  grid-column: 1 / -1;            /* να πιάνει όλο το πλάτος του grid */
+  background: #1a1a1a;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.card--details .details-body {
+  padding: 20px 22px;
+  color: var(--muted);
+}
+.card--details h4 {
+  margin: 0 0 10px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: 14px;
+}
+
+/* Tablet: 2 στήλες */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Κινητό: 1 στήλη (κομψό, χωρίς κάθετα γράμματα) */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid .card-body { padding: 14px 16px; }
+  .grid .card h3 { font-size: 16px; letter-spacing: .2px; }
+  .grid .card ul { padding-left: 18px; margin: 10px 0 0; }
+  .grid .card li { line-height: 1.5; }
+}
+
+
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar"> 
+		<div class="container"> <a class="navbar-brand" href="index.html"> 
+			<a class="navbar-brand" href="index.html"> 
+				<img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> VIP KEY 
+			</a> 
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> <span class="oi oi-menu">
+			</span> Menu </button>
+			<div class="collapse navbar-collapse" id="ftco-nav"> 
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a href="index.html" class="nav-link">Αρχικη</a>
+					</li> 
+					<li class="nav-item">
+						<a href="about.html" class="nav-link">Πληροφοριες</a>
+					</li>
+          <li class="nav-item">
+						<a href="customers.html" class="nav-link">Συνεργατες</a>
+					</li>
+          <li class="nav-item">
+						<a href="faqs.html" class="nav-link">Συχνες Ερωτησεις</a>
+					</li>
+				</ul> 
+			</div> 
+		</div> 
+	</nav>
+	<!-- END NAV -->
+  
+  <!-- CONTENT FAQS -->
+	<section class="content">
+    <div class="card">
+      <h2 style="text-align:center; margin-bottom:30px; color:white;">
+        ΣΥΧΝΕΣ Ερωτησεις - vip key
+      </h2>
+
+      <h3 style="color:white;">1. ΠΟΣΟ ΚΟΣΡΙΖΕΙ Η ΚΑΡΤΑ</h3>
+      <ul style="color:white;">
+        <li style="color:white;">Η τιμή της είναι 20€ και ισχύει για 6 μήνες..</li>
+      </ul>
+
+      <h3 style="color:white;">2. ΠΩΣ ΧΡΗΣΙΜΟΠΟΙΟ ΤΗΝ ΚΑΡΤΑ</h3>
+      <ul style="color:white;">
+        <li style="color:white;">Απλά δείξε την κάρτα σου στο ταμείο της συνεργαζόμενης επιχείρησης πριν ολοκληρώσεις την αγορά σου..</li>
+      </ul>
+
+      <h3 style="color:white;">3. ΕΙΝΑΙ ΗΑ ΚΑΡΤΑ ΠΡΟΣΩΠΙΚΗ;</h3>
+      <ul style="color:white;">
+        <li style="color:white;">Η VIP κάρτα ισχύει μέχρι <strong>[ΗΜΕΡΟΜΗΝΙΑ ΛΗΞΗΣ]</strong>.</li>
+        <li style="color:white;">Ναι, η κάρτα είναι ονομαστική και ισχύει μόνο για τον κάτοχό της.</li>
+      </ul>
+
+      <h3 style="color:white;">4. ΠΩΣ ΜΠΟΡΩ ΝΑ ΑΠΟΚΤΗΣΩ ΤΗΝ ΚΑΡΤΑ;</h3>
+      <p style="color:white;">
+        Επικοινώνησε μαζί μας στο [τηλέφωνο] ή μέσω της σελίδας “Απόκτησε την VIP Key”.  
+      </p>
+
+      <h3 style="color:white;">5. ΠΟΣΕΣ ΕΠΙΧΕΙΡΗΣΕΙΣ ΣΥΜΜΕΤΕΧΟΥΝ</h3>
+      <p style="color:white;">
+        Συνεχώς προστίθενται νέες επιχειρήσεις. Δες όλες τις συνεργασίες μας στην ενότητα «Οι συνεργάτες μας».
+      </p>
+
+      <h3 style="color:white;">6. ΑΞΙΖΕΙ ΠΡΑΓΜΑΤΙΚΑ Η ΚΑΡΤΑ;</h3>
+      <p style="color:white;">
+       Ναι, και με το παραπάνω. Αρκεί να χρησιμοποιείς την VIP Key 2–3 φορές το μήνα, για παράδειγμα σε καφέ, σούπερ μάρκετ ή εστιατόρια, και έχεις ήδη βγάλει το κόστος της κάρτας.
+      </p>
+
+      <h3 style="color:white;">7. ΑΝ ΧΑΣΩ ΤΗΝ ΚΑΡΤΑ ΜΟΥ;</h3>
+      <p style="color:white;">
+        Δεν χάνεις τη συνδρομή σου. Επικοινωνείς μαζί μας και εκδίδουμε καινούργια με μικρό κόστος αντικατάστασης.
+      </p>
+      
+      <h3 style="color:white;">8. ΚΕΡΔΙΖΩ ΑΠΟ ΠΑΝΤΟΥ Η ΜΟΝΟ ΑΠΟ ΣΥΓΚΕΚΡΙΜΕΝΑ ΚΑΤΑΣΤΗΜΑΤΑ;</h3>
+      <ul style="color:white;">
+        <li style="color:white;">Η κάρτα ισχύει σε ΟΛΕΣ τις συνεργαζόμενες επιχειρήσεις. Το κάθε κατάστημα έχει τη δική του προσφορά ή έκπτωση που απολαμβάνεις απλά με την επίδειξη της κάρτας.</li>
+      </ul>
+
+      <h3 style="color:white;">9. ΓΙΑΤΙ ΝΑ ΕΠΙΛΕΞΩ ΤΗΝ VIP KEY ΚΑΙ ΟΧΙ ΜΕΜΟΝΩΜΕΝΕΣ ΠΡΟΣΦΟΡΕΣ;</h3>
+      <ul style="color:white;">
+        <li style="color:white;">Γιατί συγκεντρώνεις δεκάδες συνεργάτες σε μία κάρτα. Δεν ψάχνεις κάθε φορά προσφορές – τις έχεις όλες μαζεμένες, άμεσα διαθέσιμες.</li>
+      </ul>
+
+      <h3 style="color:white;">10. ΘΑ ΠΡΟΣΤΕΘΟΥΝ ΝΕΕΣ ΕΠΙΧΕΙΡΗΣΕΙΣ;</h3>
+      <ul style="color:white;">
+        <li style="color:white;">Ναι! Η λίστα μεγαλώνει συνεχώς και ενημερώνεται στο site και στα social μας.</li>
+      </ul>
+
+      <h3 style="color:white;">11. ΑΝ ΔΕΝ ΜΕΝΩ ΕΛΑΣΣΟΝΑ ΑΞΙΖΕΙ ΝΑ ΤΗΝ ΠΑΡΩ;</h3>
+      <p style="color: white;">Αν επισκέπτεσαι συχνά την περιοχή (δουλειά, σπουδές, συγγενείς), τότε συμφέρει απόλυτα. Αλλιώς, μπορείς να περιμένεις την επέκταση σε νέες πόλεις.</p>
+
+      <h3 style="color:white;">12. ΥΠΑΡΧΟΥΝ ΚΡΥΦΑ ΕΞΟΔΑ;</h3>
+      <p style="color: white;">Όχι. Πληρώνεις μόνο μία φορά (20€ για 6 μήνες) και απολαμβάνεις τα προνόμια χωρίς επιπλέον χρεώσεις</p>
+
+    </div>
+  </section>
+  <!-- END CONTENT FAQS -->
+
+<!-- FOOTER -->
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2 logo">VIP KEY - SOCIAL</h2>
+              <p style="color: white;">ΒΡΕΙΤΕ ΜΑΣ ΣΤΑ SOCIAL</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="index.html" class="py-2 d-block">ΑΡΧΙΚΗ</a></li>
+                <li><a href="about.html" class="py-2 d-block">ΠΛΗΡΟΦΟΡΙΕΣ</a></li>
+                <li><a href="customers.html" class="py-2 d-block">ΣΥΝΕΡΓΑΤΕΣ</a></li>
+                <li><a href="faqs.html" class="py-2 d-block">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">vipkey2025@hotmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+				      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+			        </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+/* Lightweight Parallax Engine (GPU-friendly, throttled με rAF) */
+(() => {
+  const sections = [...document.querySelectorAll('[data-parallax]')];
+  if (!sections.length) return;
+
+  let ticking = false;
+  const clamp = (v,min,max)=>Math.min(max,Math.max(min,v));
+
+  function update(){
+    ticking = false;
+    const vh = window.innerHeight;
+
+    for (const el of sections){
+      const speed = parseFloat(el.dataset.speed || '0.35'); // 0.2–0.6 συνήθως
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > vh) continue; // εκτός viewport
+
+      // Προσαρμογή offset ώστε η κίνηση να είναι λεία και “διακριτική”
+      const progress = clamp((vh - rect.top) / (vh + rect.height), 0, 1);
+      const offset = (progress - 0.5) * 120 * speed; // px
+      el.style.backgroundPosition = `center calc(50% + ${offset.toFixed(2)}px)`;
+    }
+  }
+
+  function requestTick(){
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  // Respect reduced motion
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (mq.matches) return; // αφήνουμε το CSS fallback
+
+  window.addEventListener('scroll', requestTick, {passive:true});
+  window.addEventListener('resize', requestTick, {passive:true});
+  requestTick();
+})();
+</script>
+
+<script>
+(function(){
+  const grid = document.getElementById('portfolioGrid');
+  const filterBtns = document.querySelectorAll('.filters [data-filter]');
+  let openDetailsEl = null; // ποιο expanded panel είναι ανοιχτό
+
+  // Δημιουργεί/ενημερώνει το expanded details card κάτω από το επιλεγμένο card
+  function openDetailsFor(card){
+    const details = card.querySelector('.details');
+    if(!details) return;
+
+    // Αν υπάρχει ήδη ανοιχτό panel και είναι για το ίδιο card → κλείσimo
+    if(openDetailsEl && openDetailsEl.previousSibling === card){
+      openDetailsEl.remove();
+      openDetailsEl = null;
+      return;
+    }
+
+    // Κλείσε παλιό panel
+    if(openDetailsEl){
+      openDetailsEl.remove();
+      openDetailsEl = null;
+    }
+
+    // Δημιούργησε νέο details node
+    const panel = document.createElement('div');
+    panel.className = 'card--details';
+    panel.innerHTML = `<div class="details-body">${details.innerHTML}</div>`;
+
+    // Βάλε το panel αμέσως μετά το card (στο grid)
+    card.insertAdjacentElement('afterend', panel);
+    openDetailsEl = panel;
+    // optional: scroll στο panel
+    panel.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  // Κλικ σε card → άνοιγμα details
+  grid.addEventListener('click', (e) => {
+    const card = e.target.closest('.card');
+    if(!card || !grid.contains(card)) return;
+    openDetailsFor(card);
+  });
+
+  // Φίλτρα
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const type = btn.dataset.filter; // all | image | video | external
+      const cards = grid.querySelectorAll('.card');
+
+      // κλείσε ανοιχτό panel όταν αλλάζει φίλτρο
+      if(openDetailsEl){ openDetailsEl.remove(); openDetailsEl = null; }
+
+      cards.forEach(c => {
+        const ctype = c.getAttribute('data-type');
+        if(type === 'all' || type === ctype){
+          c.classList.remove('is-hidden');
+        } else {
+          c.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+})();
+</script>
+    
+</body>
+</html>

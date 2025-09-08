@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VIP Key</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0e0f12;
+  --text: #fff;
+  --muted: #cfd2d6;
+  --gold: #caa25a;
+  --radius: 18px;
+  --shadow: 0 12px 40px rgba(0,0,0,.35);
+  --font: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial;
+  --font-size: 14px;
+}
+
+/* ===== Global ===== */
+* { box-sizing: border-box; }
+body {
+  margin:0;
+  font-family: var(--font);
+  font-size: var(--font-size);
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+h1,h2,h3 { margin:0 0 .8rem; font-weight:600; text-transform:uppercase; }
+p { margin:0 0 1rem; }
+
+/* Navbar */
+.navbar { background:#111; padding:.8rem 1rem; }
+.navbar .navbar-brand { color:var(--gold); font-weight:700; font-size:1.2rem; }
+.navbar .nav-link { color:#fff; margin-left:1rem; }
+.navbar .nav-link:hover,
+.navbar .nav-item.active .nav-link { color:var(--gold); }
+
+/* Hero */
+.hero-wrap {
+  position:relative;
+  min-height:100vh;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  text-align:center;
+}
+.hero-wrap .overlay {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.55);
+}
+.hero-wrap .text { position:relative; z-index:2; }
+
+/* Buttons */
+.btn {
+  display:inline-block; padding:.7rem 1.4rem;
+  border:1.5px solid var(--gold);
+  border-radius:999px;
+  font-weight:600;
+  background:transparent;
+  color:var(--text);
+  transition:.25s;
+}
+.btn:hover { background:var(--gold); color:#111; transform:translateY(-2px); }
+
+/* Content section */
+.content {
+  padding:3rem 1.5rem;
+  background: radial-gradient(80% 60% at 50% 0%, rgba(202,162,90,.12), transparent 60%), linear-gradient(#101216, #0e0f12);
+}
+.content .card {
+  max-width:900px; margin:auto;
+  background:#121419;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:var(--radius);
+  padding:2rem;
+  box-shadow:var(--shadow);
+}
+
+/* Services cards */
+.wrapper { max-width:1200px; margin:auto; padding:40px 20px; }
+.cards {
+  display:grid; gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+.cards .card {
+  background:#1a1a1a;
+  border-radius:var(--radius);
+  padding:24px;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+.cards .card:hover { transform:translateY(-4px); box-shadow:0 0 20px var(--gold); }
+.icon { width:48px; height:48px; color:var(--gold); margin-bottom:12px; }
+.icon svg { width:100%; height:100%; display:block; }
+
+/* Portfolio */
+.portfolio-section {
+  background: radial-gradient(80% 60% at 50% 0%, rgba(202,162,90,.12), transparent 60%), linear-gradient(#101216,#0e0f12);
+  color:#fff; padding:4rem 1.5rem;
+}
+.filters { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-bottom:30px; }
+.filters button {
+  border:2px solid var(--gold); background:transparent; color:#fff;
+  padding:8px 18px; border-radius:25px; font-size:14px; cursor:pointer; transition:.2s;
+}
+.filters button.active, .filters button:hover { background:var(--gold); color:#000; }
+.grid { display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+.grid .card { background:#2a2a2a; border-radius:var(--radius); overflow:hidden; transition:.2s; }
+.grid .card:hover { transform:translateY(-5px); box-shadow:0 0 15px var(--gold); }
+.grid .card img { width:100%; display:block; }
+.grid .card-body { padding:16px 20px; }
+.grid .card h3 { font-size:15px; text-transform:uppercase; color:#fff; margin:0 0 6px; }
+.grid .card h3::before {
+  content:""; display:inline-block; width:3px; height:14px; background:var(--gold);
+  margin-right:8px; vertical-align:middle;
+}
+.grid .card p { font-size:13px; color:#aaa; }
+
+.hero-wrap,
+.content, 
+.services-section,
+.portfolio-section {
+  margin-bottom: 50;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+/* Κρύβουμε ό,τι φιλτράρεται */
+.is-hidden { display: none !important; }
+
+/* Expanded details card που μπαίνει στο grid σαν επιπλέον item */
+.card--details {
+  grid-column: 1 / -1;            /* να πιάνει όλο το πλάτος του grid */
+  background: #1a1a1a;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.card--details .details-body {
+  padding: 20px 22px;
+  color: var(--muted);
+}
+.card--details h4 {
+  margin: 0 0 10px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: 14px;
+}
+
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar"> 
+		<div class="container"> <a class="navbar-brand" href="index.html"> 
+			<a class="navbar-brand" href="index.html"> 
+				<img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> VIP KEY 
+			</a> 
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> <span class="oi oi-menu">
+			</span> Menu </button>
+			<div class="collapse navbar-collapse" id="ftco-nav"> 
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a href="index.html" class="nav-link">Αρχικη</a>
+					</li> 
+					<li class="nav-item">
+						<a href="about.html" class="nav-link">Πληροφοριες</a>
+					</li>
+          			<li class="nav-item">
+						<a href="customers.html" class="nav-link">Συνεργάτες</a>
+					</li> 
+          </li>
+          		<li class="nav-item">
+						<a href="faqs.html" class="nav-link">Συχνες Ερωτησεις</a>
+					</li>
+				</ul> 
+			</div> 
+		</div> 
+	</nav>
+	<!-- END NAV -->
+  
+	<!-- HERO -->
+  <section class="hero-wrap" style="background-image:url(images/larissa.jpg);">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="text">
+        <img src="images/VIPlogoNoBcakgrnd.png" alt="VIP Logo" style="height:300px;">
+		<p class="lead" style="font-size:2.5rem;font-weight:700;">AΠΟΚΤΗΣΕ ΤΗΝ VIP KEY</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIDDLE CONTENT -->
+  <section class="content">
+    <div class="card">
+      <h3 style="color: white; text-align:center;">Πως λειτουργει η VIP KEY</h3>
+      	<h5 class="all-caps" style="text-align:center; color: white;">Αγόρασε την κάρτα μία φορά για 6 μήνες Δείξε την κάρτα σου σε κάθε συνεργαζόμενο κατάστημα πριν πληρώσεις. Κέρδισε την έκπτωση ή την ειδική προσφορά που έχουμε συμφωνήσει με την επιχείρηση. Δεν υπάρχουν πόντοι, κουπόνια ή περίπλοκες διαδικασίες. Με το που δείχνεις την κάρτα σου, κερδίζεις επιτόπου.
+			Σταμάτα να πληρώνεις παραπάνω στην πόλη σου – μάθε πώς να κερδίζεις παντού με τη VIP KEY”.
+		</h5>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section">
+	<div class="container text-center">
+		<img src="images/logo1.png" alt="VIP Logo" style="height:150px;">
+		<h2 class="all-caps" style="color: white; margin-bottom:100px;">Πως αποκτας την VIP Key;</h2>
+		</div>
+		<div class="wrapper">
+		<div class="cards">
+			<article class="card">
+			<div class="icon">
+				<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+			</div>
+			<h4 style="color: white;">Επικοινωνείς μαζί μας – Στέλνεις μήνυμα ή καλείς στο (+30) 6980755756  6982908447</h4>
+			</article>
+			<article class="card">
+			<div class="icon">
+				<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+			</div>
+			<h4 style="color: white;">Παραλαμβάνεις την κάρτα σου – Σου δίνουμε τη φυσική κάρτα VIP Key</h4>
+			</article>
+			<article class="card">
+			<div class="icon">
+				<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+			</div>
+			<h4 style="color: white;">Ξεκινάς να κερδίζεις – Δείχνεις την κάρτα σου σε κάθε συνεργαζόμενο κατάστημα και απολαμβάνεις τις εκπτώσεις και τα προνόμια.</h4>
+			</article>
+		</div>
+	</div>
+  </section>
+
+ <section class="content">
+  <div class="card">
+    <h2 style="text-align:center; margin-bottom:30px; color:white;">
+      οροι χρησης - vip key
+    </h2>
+    <p style="text-align:center; font-size:18px; margin-bottom:50px; color:white;">
+      Καλώς ήρθες στο VIP πρόγραμμα της πόλης!
+      Με την κάρτα σου απολαμβάνεις μοναδικά προνόμια σε συνεργαζόμενες επιχειρήσεις.
+    </p>
+
+    <h3 style="color:white;">1. Προσωπικη Χρηση</h3>
+    <ul style="color:white;">
+      <li style="color:white;">Η κάρτα είναι αυστηρά προσωπική.</li>
+      <li style="color:white;">Αναγράφει το όνομα του κατόχου.</li>
+      <li style="color:white;">Τα μαγαζιά έχουν το δικαίωμα να ζητήσουν προφορική επιβεβαίωση ονόματος ή επίδειξη ταυτότητας/Instagram για λόγους ταυτοποίησης.</li>
+    </ul>
+
+    <h3 style="color:white;">2. Απαγορευση Αναπαραγωγης</h3>
+    <ul style="color:white;">
+      <li style="color:white;">Δεν επιτρέπεται η αντιγραφή, κοινή χρήση ή πώληση της κάρτας.</li>
+      <li style="color:white;">Αν εντοπιστεί παράβαση, η κάρτα ακυρώνεται χωρίς επιστροφή χρημάτων.</li>
+    </ul>
+
+    <h3 style="color:white;">3. Περιοδος Ισχυος</h3>
+    <ul style="color:white;">
+      <li style="color:white;">Η VIP κάρτα ισχύει μέχρι <strong>[ΗΜΕΡΟΜΗΝΙΑ ΛΗΞΗΣ]</strong>.</li>
+      <li style="color:white;">Θα ενημερώνεσαι για νέες συνεργασίες ή προσφορές μέσω Instagram ή προσωπικού μηνύματος.</li>
+    </ul>
+
+    <h3 style="color:white;">4. Απωλεια η Κλοπη Καρτας η Φθορας</h3>
+    <p style="color:white;">
+    Σε περίπτωση απώλειας ή κλοπής η φθοράς της κάρτας  VIP Key, ο κάτοχος οφείλει να επικοινωνήσει άμεσα με τον διαχειριστή του προγράμματος. 
+    Η κάρτα θα ακυρώνεται για λόγους ασφαλείας και θα παρέχεται δυνατότητα έκδοσης νέας κάρτας με κόστος αντικατάστασης 6€. Η νέα κάρτα διατηρεί την αρχική ημερομηνία λήξης της συνδρομής και δεν συνεπάγεται επέκτασή της.  
+    </p>
+    <p style="color:white;">
+      Για να ξεκινήσει η διαδικασία επανέκδοσης, το μέλος πρέπει να στείλει σχετικό αίτημα στο email: 
+      <a href="mailto:vipkey2025@hotmail.com" style="color:white;">vipkey2025@hotmail.com</a>.
+    </p>
+    <p style="color:white;"><em>Η επανέκδοση πραγματοποιείται εντός 7 εργάσιμων ημερών από την ημερομηνία δήλωσης.</em></p>
+    <p style="color:white;"><strong>Σημείωση:</strong> Σε περίπτωση τεχνικού προβλήματος της κάρτας (π.χ. μη αναγνώσιμο QR), η επανέκδοση γίνεται δωρεάν, εφόσον διαπιστωθεί από την ομάδα της  VIP Key ότι το πρόβλημα δεν οφείλεται σε κακή χρήση.</p>
+
+    <h3 style="color:white;">5. Επιστροφη Χρηματων (Refunds)</h3>
+    <p style="color:white;">
+      Η αγορά της VIP Key είναι τελική και δεν προβλέπεται επιστροφή χρημάτων για κανέναν λόγο, συμπεριλαμβανομένων παραπόνων για την ποιότητα ή τον αριθμό των προσφορών. 
+      Ο χρήστης αποδέχεται τους όρους χρήσης με την αγορά της κάρτας.
+    </p>
+
+    <h3 style="color:white;">6. Μεταβιβαση Καρτας</h3>
+    <p style="color:white;">
+      Η κάρτα είναι αυστηρά προσωπική και δεν μεταβιβάζεται. 
+      Η χρήση της από άλλο άτομο εκτός του αρχικού κατόχου θεωρείται κατάχρηση και μπορεί να οδηγήσει σε άμεση ακύρωση της κάρτας χωρίς αποζημίωση.
+    </p>
+
+    <h3 style="color:white;">7. Πολιτικη Απορρητου & Προστασια Προσωπικων Δεδομενων</h3>
+    <p style="color:white;">
+      Η “VIP Key” συλλέγει και αποθηκεύει βασικά στοιχεία των κατόχων της κάρτας, όπως ονοματεπώνυμο, ημερομηνία ενεργοποίησης και μοναδικό κωδικό QR, αποκλειστικά για σκοπούς ελέγχου εγκυρότητας της συνδρομής.  
+      Τα δεδομένα αυτά:
+    </p>
+    <ul style="color:white;">
+      <li style="color:white;">Δε διαβιβάζονται ή κοινοποιούνται σε τρίτους</li>
+      <li style="color:white;">Δεν χρησιμοποιούνται για διαφημιστικούς ή εμπορικούς σκοπούς.</li>
+      <li style="color:white;">Αποθηκεύονται με ασφάλεια και διαγράφονται εντός εύλογου διαστήματος μετά τη λήξη της συνδρομής.</li>
+    </ul>
+    <p style="color:white;">Με τη χρήση της κάρτας, ο κάτοχος συναινεί στη συλλογή και επεξεργασία των ανωτέρω στοιχείων, σύμφωνα με την παρούσα πολιτική.</p>
+
+    <h3 style="color:white;">8. ΠΕΡΙΟΡΙΣΜΟΙ ΕΥΘΥΝΗΣ VIP KEY</h3>
+    <ul style="color:white;">
+      <li style="color:white;">Δεν ευθύνεται η VIP Key για την ποιότητα, την ασφάλεια ή τη διαθεσιμότητα προϊόντων/υπηρεσιών.</li>
+      <li style="color:white;">Η ευθύνη ανήκει αποκλειστικά στην εκάστοτε επιχείρηση.</li>
+    </ul>
+
+    <h3 style="color:white;">9. ΔΙΕΥΚΡΙΝΙΣΗ ΜΗ ΧΡΗΣΗΣ ΩΣ ΜΕΣΟ ΠΛΗΡΩΜΗΣ</h3>
+    <ul style="color:white;">
+      <li style="color:white;">Η κάρτα δεν είναι μέσο πληρωμής ή πιστωτικό προϊόν.</li>
+    </ul>
+
+    <h3 style="color:white;">10. ΑΦΑΛΕΙΑ QR ΚΑΙ ΗΛΕΚΤΡΟΝΙΚΟΣ ΕΛΕΓΧΟΣ</h3>
+    <ul style="color:white;">
+      <li style="color:white;">Ο κάτοχος αποδέχεται ότι ο μοναδικός κωδικός QR μπορεί να χρησιμοποιηθεί για έλεγχο εγκυρότητας.</li>
+      <li style="color:white;">Απαγορεύεται η αντιγραφή/παραποίηση QR</li>
+    </ul>
+
+    <h3 style="color:white;">11. ΔΙΚΑΙΩΜΑ ΑΚΥΡΩΣΗΣ ΑΠΟ VIP KEY</h3>
+    <ul style="color:white;">
+      <li style="color:white;">Η VIP Key μπορεί να ακυρώσει την κάρτα σε περίπτωση απάτης ή παραβίασης των όρων, χωρίς επιστροφή χρημάτων.</li>
+    </ul>
+
+    <h3 style="color:white;">12. ΤΡΟΠΟΠΟΙΗΣΗ ΟΡΩΝ</h3>
+    <p style="color: white;">Η VIP Key διατηρεί το δικαίωμα να τροποποιήσει τους Όρους Χρήσης οποιαδήποτε στιγμή, με ενημέρωση του χρήστη μέσω των επίσημων καναλιών επικοινωνίας.</p>
+
+    <h3 style="color:white;">13. ΑΠΟΔΟΧΗ ΟΡΩΝ</h3>
+    <p style="color: white;">Με την αγορά και χρήση της κάρτας, ο χρήστης αποδέχεται αυτόματα όλους τους παρόντες όρους χρήσης.</p>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2 logo">VIP KEY - SOCIAL</h2>
+              <p style="color: white;">ΒΡΕΙΤΕ ΜΑΣ ΣΤΑ SOCIAL</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="index.html" class="py-2 d-block">ΑΡΧΙΚΗ</a></li>
+                <li><a href="about.html" class="py-2 d-block">ΠΛΗΡΟΦΟΡΙΕΣ</a></li>
+                <li><a href="customers.html" class="py-2 d-block">ΣΥΝΕΡΓΑΤΕΣ</a></li>
+                <li><a href="faqs.html" class="py-2 d-block">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">vipkey2025@hotmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+				      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+			      </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>

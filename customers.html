@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VIP Key</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0e0f12;
+  --text: #fff;
+  --muted: #cfd2d6;
+  --gold: #caa25a;
+  --radius: 18px;
+  --shadow: 0 12px 40px rgba(0,0,0,.35);
+  --font: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial;
+  --font-size: 14px;
+}
+
+/* ===== Global ===== */
+* { box-sizing: border-box; }
+body {
+  margin:0;
+  font-family: var(--font);
+  font-size: var(--font-size);
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+h1,h2,h3 { margin:0 0 .8rem; font-weight:600; text-transform:uppercase; }
+p { margin:0 0 1rem; }
+
+/* Navbar */
+.navbar { background:#111; padding:.8rem 1rem; }
+.navbar .navbar-brand { color:var(--gold); font-weight:700; font-size:1.2rem; }
+.navbar .nav-link { color:#fff; margin-left:1rem; }
+.navbar .nav-link:hover,
+.navbar .nav-item.active .nav-link { color:var(--gold); }
+
+/* Hero */
+.hero-wrap {
+  position:relative;
+  min-height:100vh;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  text-align:center;
+}
+.hero-wrap .overlay {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.55);
+}
+.hero-wrap .text { position:relative; z-index:2; }
+
+/* Buttons */
+.btn {
+  display:inline-block; padding:.7rem 1.4rem;
+  border:1.5px solid var(--gold);
+  border-radius:999px;
+  font-weight:600;
+  background:transparent;
+  color:var(--text);
+  transition:.25s;
+}
+.btn:hover { background:var(--gold); color:#111; transform:translateY(-2px); }
+
+/* Content section */
+.content {
+  padding:3rem 1.5rem;
+  background: radial-gradient(80% 60% at 50% 0%, rgba(202,162,90,.12), transparent 60%), linear-gradient(#101216, #0e0f12);
+}
+.content .card {
+  max-width:900px; margin:auto;
+  background:#121419;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:var(--radius);
+  padding:2rem;
+  box-shadow:var(--shadow);
+}
+
+/* Services cards */
+.wrapper { max-width:1200px; margin:auto; padding:40px 20px; }
+.cards {
+  display:grid; gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+.cards .card {
+  background:#1a1a1a;
+  border-radius:var(--radius);
+  padding:24px;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+.cards .card:hover { transform:translateY(-4px); box-shadow:0 0 20px var(--gold); }
+.icon { width:48px; height:48px; color:var(--gold); margin-bottom:12px; }
+.icon svg { width:100%; height:100%; display:block; }
+
+/* Portfolio */
+.portfolio-section {
+  background: radial-gradient(80% 60% at 50% 0%, rgba(202,162,90,.12), transparent 60%), linear-gradient(#101216,#0e0f12);
+  color:#fff; 
+  padding:4rem 1.5rem;
+}
+
+.filters { 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:12px; 
+  justify-content:center; 
+  margin-bottom:30px; 
+}
+
+.filters button {
+  border:2px solid var(--gold); 
+  background:transparent; 
+  color:#fff;
+  padding:8px 18px; 
+  border-radius:25px; 
+  font-size:14px; 
+  cursor:pointer; 
+  transition:.2s;
+}
+.filters button.active, 
+.filters button:hover { 
+  background:var(--gold); 
+  color:#000; 
+}
+
+/* ✅ Grid 4 στη σειρά */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid .card { 
+  background:#2a2a2a; 
+  border-radius:var(--radius); 
+  overflow:hidden; 
+  transition:.2s; 
+}
+.grid .card:hover { 
+  transform:translateY(-5px); 
+  box-shadow:0 0 15px var(--gold); 
+}
+/* Βοηθά εικόνες και κείμενο να «κάθονται» ωραία */
+.grid .card img {
+  width: 100%;
+  display: block;
+  /* aspect-ratio: 16/9;  <-- αν το είχες βάλει */
+  /* object-fit: cover;   <-- αν το είχες βάλει */
+}
+.grid .card-body { 
+  padding:16px 20px; 
+}
+.grid .card h3 { 
+  font-size:15px; 
+  text-transform:uppercase; 
+  color:#fff; 
+  margin:0 0 6px; 
+}
+.grid .card h3::before {
+  content:""; 
+  display:inline-block; 
+  width:3px; 
+  height:14px; 
+  background:var(--gold);
+  margin-right:8px; 
+  vertical-align:middle;
+}
+.grid .card p { 
+  font-size:13px; 
+  color:#aaa; 
+}
+
+.hero-wrap,
+.content, 
+.services-section,
+.portfolio-section {
+  margin-bottom: 50;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.grid .card h3,
+.grid .card p,
+.grid .card li {
+  word-break: normal;
+  overflow-wrap: break-word; /* ή: anywhere */
+  hyphens: auto;             /* να μπαίνουν διακριτικά παύλες όπου γίνεται */
+}
+
+/* Κρύβουμε ό,τι φιλτράρεται */
+.is-hidden { 
+  display: none !important; 
+}
+
+/* Expanded details card που μπαίνει στο grid σαν επιπλέον item */
+.card--details {
+  grid-column: 1 / -1;            /* να πιάνει όλο το πλάτος του grid */
+  background: #1a1a1a;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.card--details .details-body {
+  padding: 20px 22px;
+  color: var(--muted);
+}
+.card--details h4 {
+  margin: 0 0 10px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: 14px;
+}
+
+/* Tablet: 2 στήλες */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Κινητό: 1 στήλη (κομψό, χωρίς κάθετα γράμματα) */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid .card-body { padding: 14px 16px; }
+  .grid .card h3 { font-size: 16px; letter-spacing: .2px; }
+  .grid .card ul { padding-left: 18px; margin: 10px 0 0; }
+  .grid .card li { line-height: 1.5; }
+}
+
+
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar"> 
+		<div class="container"> <a class="navbar-brand" href="index.html"> 
+			<a class="navbar-brand" href="index.html"> 
+				<img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> VIP KEY 
+			</a> 
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> <span class="oi oi-menu">
+			</span> Menu </button>
+			<div class="collapse navbar-collapse" id="ftco-nav"> 
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a href="index.html" class="nav-link">Αρχικη</a>
+					</li> 
+					<li class="nav-item">
+						<a href="about.html" class="nav-link">Πληροφοριες</a>
+					</li>
+          <li class="nav-item">
+						<a href="customers.html" class="nav-link">Συνεργατες</a>
+					</li>
+          <li class="nav-item">
+						<a href="faqs.html" class="nav-link">Συχνες Ερωτησεις</a>
+					</li>
+				</ul> 
+			</div> 
+		</div> 
+	</nav>
+	<!-- END NAV -->
+  
+	<!-- HERO -->
+  <section class="hero-wrap" style="background-image:url(images/larissa.jpg);">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="text">
+        <img src="images/VIPlogoNoBcakgrnd.png" alt="VIP Logo" style="height:300px;">
+        <h2 class="all-caps" style="color:white; text-align:center; "> Εξερευνησε της μοναδικες προσφορες απο τους συνεργατες της vip key</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIDDLE CONTENT -->
+  <section class="content">
+    <div class="card">
+      <h3 style="color: white; text-align:center;">VIP KEY και συνεργατες</h3>
+      	<h5 class="all-caps" style="text-align:center; color: white;">Η VIP Key εξελίσσεται διαρκώς , κάθε μήνα νέες συνεργασίες, νέες εμπειρίες, νέες εκπτώσεις! Με την VIP Key, τα προνόμια δεν σταματούν ποτέ.</h5>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+<section class="portfolio-section">
+  <div class="container">
+    <h2 class="all-caps" style="color:white; text-align:center; ">Μοναδικες προσφορες απο τους συνεργατες της vip key</h2>
+    <p style="color:white; text-align:center; margin-bottom:100px;">*Η ΕΚΠΤΩΣΗ ΙΣΧΥΕΙ Μόνο με την επίδειξη της  έγκυρης και ονομαστικής κάρτας VIP KEY στο κατάστημα</p>
+    <h5 class="all-caps" style="color:white; text-align:center;">ΚΑΝΕ CLICK ΣΤΟ ΚΑΘΕ ΚΑΤΑΣΤΗΜΑ ΓΙΑ ΝΑ ΑΝΑΚΑΛΥΨΕΙΣ ΤΙΣ ΜΟΝΑΔΙΚΕΣ ΠΡΟΣΦΟΡΕΣ</h5>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button class="active" data-filter="all">Συνεργάτες</button>
+      <button class="active" data-filter="supermarket">Supermarket - Τρόφιμα</button>
+      <button class="active" data-filter="food">Φαγητό & Ποτό</button>
+      <button class="active" data-filter="shop">Μόδα - Ομορφία</button>
+      <button class="active" data-filter="family">Fitness & Παιδί</button>
+      <button class="active" data-filter="house">Σπίτι & Αυτοκίνητο</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid" id="portfolioGrid">
+      
+     <!-- CARD 1 -->
+      <div class="card" data-type="supermarket">
+        <img src="images/customers/new cusdtomerLogo/SUPER MARKET SMART.jpg" alt="">
+        <div class="card-body">
+          <h3>Smart Choice Supermarket</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>Smart Choice Supermarket</h4>
+          <ul>
+            <li>-10% σε όλα τα προϊόντα για αγορές άνω των 50€</li>
+            <li>-15% για αγορές άνω των 100€</li>
+          </ul>
+          <p>*Το  Γάλα και ποτά δεν συμπεριλαμβάνονται στον παραπάνω τζίρο ούτε παίρνουν μέρος στις εκπτώσεις.</p>
+          <p>📍 Διεύθυνση: 6ης Οκτωβρίου, Τσαριτσάνη <br> <a href="https://maps.app.goo.gl/fu5FNzXJkbRLELTU7" target="_blank">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493081221</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card" data-type="food">
+        <img src="images/customers/new cusdtomerLogo/FRANKLIN.jpg" alt="">
+        <div class="card-body">
+          <h3>Franklin Coffee House</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>Franklin Coffee House</h4>
+          <ul>
+            <li>Freddo espresso ή cappuccino +Νερό  μόνο 2,30€.  (από 2,70€)</li>
+            <li>Freddo espresso ή cappuccino ΤΕΤΡΑΠΛΟΣ +Νερό μόνο 2,80€</li>
+          </ul>
+          <p>*Ισχύει μονο για αγορές από το κατάστημα , όχι ντελίβερι</p>
+          <p>📍 Διεύθυνση: 6ης Οκτωβρίου, Ελασσόνα <br> <a href="https://maps.app.goo.gl/bZzrwj6TEi46rJgo7" target="_blank">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024507 – 6987173776</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+	    <!-- CARD 3 -->
+      <div class="card" data-type="food">
+        <img src="images/customers/new cusdtomerLogo/nostimoNew.jpeg" alt="">
+        <div class="card-body">
+          <h3>FastFood Nostimo</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>FastFood Nostimo</h4>
+          <ul>
+            <li>-10% για λογαριασμούς άνω των 10€</li>
+          </ul>
+          <p>📍Διεύθυνση: Γεωργάκη Ολυμπίου 2, Ελασσόνα <br> <a href="https://maps.app.goo.gl/phhJhXEcMRVaKTkN9">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493022843</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card" data-type="house">
+        <img src="images/customers/new cusdtomerLogo/euronicsNew.jpeg" alt="">
+        <div class="card-body">
+          <h3>Euronics Ζιανος</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>Euronics Ζιανός</h4>
+          <ul>
+            <li>-20% στην αρχική τιμή όλων των ηλεκτρικών συσκευών</li>
+            <li>-10% στην αρχική τιμή όλων των τηλεοράσεων</li>
+            <li>-20% στην αρχική τιμή όλων των μικροσυσκευών</li>
+          </ul>
+          <p>*Ισχύει μόνο για αγορές απ το κατάστημα </p>
+          <p>*Τα παραπάνω δεν ισχύουν σε προϊόντα με  ήδη έκπτωση</p>
+          <p>📍 Διεύθυνση: Κ. Οικονόμου 60, Ελασσόνα <br> <a href="https://maps.app.goo.gl/LQ8MTxvyVkKMWerQ9" target="_blank">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024415</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+       <!-- CARD 5 -->
+      <div class="card" data-type="family">
+        <img src="images/customers/new cusdtomerLogo/365New.jpeg" alt="">
+        <div class="card-body">
+          <h3>365FitnessClub</h3>
+        </div>
+        <div class="details" hidden>
+          <h4>365FitnessClub</h4>
+          <ul>
+            <li>2 μήνες μόνο 75€ (αντί 80€)</li>
+            <li>3 μήνες μόνο 100€ (αντί 120€)</li>
+            <li>Διεύθυνση: Τσαριτσάνη</li>
+          </ul>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 698 4429754 </p>
+          <p>📍 Διεύθυνση: Τσαριτσάνη Ελασσόνας <br> <a href="https://maps.app.goo.gl/aasJe1VrLu5Xvek17">Δες το στον χάρτη</a></p>
+          <p>Υπεύθυνος γυμναστηρίου : Καραμήτσιος Νίκος </p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="card" data-type="shop">
+        <img src="images/customers/new cusdtomerLogo/NEEMA.jpg" alt="">
+        <div class="card-body">
+          <h3>NEEMA clothes </h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>NEEMA clothes</h4>
+          <ul>
+            <li>-30% σε όλη την γκάμα ρούχων</li>
+          </ul>
+          <p>*Η παραπάνω έκπτωση ισχύει μόνο στις αρχικές τιμές των προϊόντων και όχι σε προϊόντα με ήδη έκπτωση </p>
+          <p>📍 Διεύθυνση: Τσακάλωφ 9, Ελασσόνα <br> <a href="https://maps.app.goo.gl/zcQpgD8TZTsGwGju5" target="_blank">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024415</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="card" data-type="family">
+        <img src="images/customers/new cusdtomerLogo/kdapNew.jpeg" alt="">
+        <div class="card-body">
+          <h3>ΚΔΑΠ ΠΑΙΓΝΙΟΜΑΘΗΣΗ</h3>
+        </div>
+        <div class="details" hidden>
+          <h4>ΚΔΑΠ ΠΑΙΓΝΙΟΜΑΘΗΣΗ</h4>
+          <p>3 Μήνες Παιχνιδομάθηση μόνο με 60€ αντί για 90€!</p>
+          <p>📍 Διεύθυνση: Κ. Οικονόμου 63, Ελασσόνα <br> <a href="https://maps.apple/p/oMGcucHj6SuZLw">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 6979088504</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="card" data-type="food">
+        <img src="images/customers/new cusdtomerLogo/ΑΠΟΣΤΑΚΤΗΡΙΟ.jpg" alt="">
+        <div class="card-body">
+          <h3>καφε - ψησταρια ΑΠΟΣΤΑΚΤΗΡΙΟ</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>καφε - ψησταρια ΑΠΟΣΤΑΚΤΗΡΙΟ</h4>
+          <ul>
+            <li>-10% έκπτωση  για λογαριασμούς άνω των 30€</li>
+          </ul>
+          <p>*Η έκπτωση ισχύει για το σύνολο του λογαριασμού του τραπεζιού της ημέρας.</p>
+          <p>*Η έκπτωση είναι -10%, ανεξάρτητα από το πόσα άτομα στο ίδιο τραπέζι διαθέτουν την κάρτα VIP Key.</p>
+          <p>📍 Διεύθυνση: Τσαριτσάνη, Ελασσόνα, 40200<br> <a href="https://maps.app.goo.gl/8S9GGGnWxV37Tvgy9" target="_blank">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 24930 81218</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 9 -->
+      <div class="card" data-type="supermarket">
+        <img src="images/customers/new cusdtomerLogo/COOP.jpg" alt="">
+        <div class="card-body">
+          <h3>Super Market COOP – ΕΛΛΗΝΙΚΗ ΔΙΑΤΡΟΦΗ ΓΟΥΣΙΑ ΠΟΠΗ</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>Super Market COOP – ΕΛΛΗΝΙΚΗ ΔΙΑΤΡΟΦΗ ΓΟΥΣΙΑ ΠΟΠΗ</h4>
+          <ul>
+            <li>-10% σε όλα τα προϊόντα για αγορές άνω των 50€</li>
+          </ul>
+          <p>📍 Διεύθυνση: Τσαριτσάνη, Ελασσόνα, 40200<br> <a href="https://maps.app.goo.gl/CZa2MRm9o2Sky82n8">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493081780</p>
+          <p>Υπεύθυνη super market : Ελευθερία Περήφανου</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 10 -->
+      <div class="card" data-type="house">
+        <img src="images/customers/new cusdtomerLogo/MONO.jpg" alt="">
+        <div class="card-body">
+          <h3>MONO YOU&HOME</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>MONO YOU&HOME</h4>
+          <ul>
+            <li>-15% σε όλα τα προϊόντα </li>
+          </ul>
+          <p>*Η παραπάνω έκπτωση ισχύει μόνο στις αρχικές τιμές των προϊόντων και όχι σε προϊόντα με ήδη έκπτωση</p>
+          <p>📍 Διεύθυνση: Μαυροδήμου Ιωάννη 57<br> <a href="https://maps.app.goo.gl/APLDBtXbmUBUz8Ya9">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024117</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 11 -->
+      <div class="card" data-type="food">
+        <img src="images/customers/new cusdtomerLogo/DESTINO.jpg" alt="">
+        <div class="card-body">
+          <h3>DESTINO Καφέ</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>DESTINO Καφέ</h4>
+          <ul>
+            <li>Freddo espresso ή cappuccino +Νερό+Μπαγκέτα μόνο 4€ (από 4,50€)</li>
+          </ul>
+          <p>*Ισχύει μονο για αγορές από το κατάστημα , όχι ντελίβερ</p>
+          <p>📍 Διεύθυνση: Τέρμα, Γεωργάκη Ολυμπίου 0, Ελασσόνα<br> <a href="https://maps.app.goo.gl/wxT6cA9t2pkYQdTz8">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 6975532114</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 12 -->
+      <div class="card" data-type="shop">
+        <img src="images/customers/new cusdtomerLogo/ZEBRA STYLE.jpg" alt="">
+        <div class="card-body">
+          <h3>ZEBRA STYLE</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>ZEBRA STYLE</h4>
+          <ul>
+            <li>-20% σε όλα τα προϊόντα για αγορές άνω των 50€</li>
+          </ul>
+          <p>*Η παραπάνω έκπτωση ισχύει μόνο στις αρχικές τιμές των προϊόντων και όχι σε προϊόντα με ήδη έκπτωση</p>
+          <p>📍 Διεύθυνση: Τσαριτσάνη<br> <a href="https://maps.app.goo.gl/PncBXpsdqiVLvMEj8">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493081381</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 13 -->
+      <div class="card" data-type="shop">
+        <img src="images/customers/new cusdtomerLogo/DA LENA.jpg" alt="">
+        <div class="card-body">
+          <h3>DALENA</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>DALENA</h4>
+          <ul>
+            <li>-15% σε όλα τα προϊόντα για αγορές άνω των 10€</li>
+          </ul>
+          <p>*Η παραπάνω έκπτωση ισχύει μόνο στις αρχικές τιμές των προϊόντων και όχι σε προϊόντα με ήδη έκπτωση</p>
+          <p>📍 Διεύθυνση: Ξάνθου 02, Ελασσόνα<br> <a href="https://maps.app.goo.gl/ABzuYF5Ji4o6RaSU9">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 6980123206</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 14 -->
+      <div class="card" data-type="shop">
+        <img src="images/customers/new cusdtomerLogo/ALIS.jpg" alt="">
+        <div class="card-body">
+          <h3>ALIS BEAUTY</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>ALIS BEAUTY</h4>
+          <ul>
+            <li>Solarium μόνο 60€ τα 100 λεπτά ( από 100€)</li>
+            <li>-20% για όλα τα προϊόντα  του καταστήματος</li>
+          </ul>
+          <p>*Η παραπάνω έκπτωση ισχύει μόνο στις αρχικές τιμές των προϊόντων και όχι σε προϊόντα με ήδη έκπτωση</p>
+          <p>📍 Διεύθυνση: 6ης Οκτωβρίου 68, Ελασσόνα 402 00<br> <a href="https://maps.app.goo.gl/auQARkk6Fxn43NtP6">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493401002</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 15 -->
+      <div class="card" data-type="house">
+        <img src="images/customers/new cusdtomerLogo/AUTO SPA.jpg" alt="">
+        <div class="card-body">
+          <h3>ΠΛΥΝΤΗΡΙΟ ΑΥΤΟΚΙΝΗΤΩΝ AUTOSPA</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>ΠΛΥΝΤΗΡΙΟ ΑΥΤΟΚΙΝΗΤΩΝ AUTOSPA</h4>
+          <ul>
+            <li>-5%  σε βιολογικό καθαρισμό</li>
+            <li>-5% σε γυάλισμα αυτοκινήτων</li>
+          </ul>
+          <p>📍 Διεύθυνση: Δημητρίου 38, Ελασσόνα<br> <a href="https://maps.apple.com/place?address=%CE%94%CE%B7%CE%BC%CE%B7%CF%84%CF%81%CE%AF%CE%BF%CF%85+38%2C+402+00+%CE%95%CE%BB%CE%B1%CF%83%CF%83%CF%8C%CE%BD%CE%B1%2C+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1&coordinate=39.885999%2C22.189371&name=%CE%94%CE%BC%CE%B7%CF%84%CF%81%CE%AF%CE%BF%CF%85+38">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 6986727971</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 16 -->
+      <div class="card" data-type="supermarket">
+        <img src="images/customers/new cusdtomerLogo/ΠΑΠΑΚΩΝΣΤΑΝΤΙΝΟΥ.jpg" alt="">
+        <div class="card-body">
+          <h3>ΠΛΥΝΤΗΡΙΟ ΑΥΤΟΚΙΝΗΤΩΝ AUTOSPA</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>ΠΛΥΝΤΗΡΙΟ ΑΥΤΟΚΙΝΗΤΩΝ AUTOSPA</h4>
+          <ul>
+            <li>-5%  σε βιολογικό καθαρισμό</li>
+            <li>-5% σε γυάλισμα αυτοκινήτων</li>
+          </ul>
+          <p>📍 Διεύθυνση: Δημητρίου 38, Ελασσόνα<br> <a href="https://maps.apple.com/place?address=%CE%94%CE%B7%CE%BC%CE%B7%CF%84%CF%81%CE%AF%CE%BF%CF%85+38%2C+402+00+%CE%95%CE%BB%CE%B1%CF%83%CF%83%CF%8C%CE%BD%CE%B1%2C+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1&coordinate=39.885999%2C22.189371&name=%CE%94%CE%BC%CE%B7%CF%84%CF%81%CE%AF%CE%BF%CF%85+38">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 6986727971</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 17 -->
+      <div class="card" data-type="food">
+        <img src="images/customers/new cusdtomerLogo/COMING SOON.jpg" alt="">
+        <div class="card-body">
+          <h3>ΠΕΝΤΕ Φ</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>ΠΕΝΤΕ Φ</h4>
+          <ul>
+            <li>-10% έκπτωση  για λογαριασμούς άνω των 50€</li>
+          </ul>
+          <p>*Η έκπτωση ισχύει για το σύνολο του λογαριασμού του τραπεζιού της ημέρας.</p>
+          <p>*Η έκπτωση είναι -10%, ανεξάρτητα από το πόσα άτομα στο ίδιο τραπέζι διαθέτουν την κάρτα VIP Key.</p>
+          <p>📍 Διεύθυνση: Τσαριτσάνη<br> <a href="https://maps.app.goo.gl/6E1Fm2ab4bfww7DM6">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 6978065052</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+      <!-- CARD 18 -->
+      <div class="card" data-type="supermarket">
+        <img src="images/customers/new cusdtomerLogo/COMING SOON.jpg" alt="">
+        <div class="card-body">
+          <h3>Κόσυβας Βιοτεχνία Ξηρών Καρπών</h3>
+        </div>
+        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+        <div class="details" hidden>
+          <h4>Κόσυβας Βιοτεχνία Ξηρών Καρπών</h4>
+          <ul>
+            <li>-10% έκπτωση σε όλα τα προιόντα του καταστήματος  για αγορές εώς 50€  εκτός από το ηλιέλαιο</li>
+          </ul>
+          <p>*Η έκπτωση  ισχύει για μια αγορά ανά ημέρα</p>
+          <p>📍 Διεύθυνση: 1ο χλμ Ελασσόνας-Κοζανης, Ελασσόνα<br> <a href="https://maps.app.goo.gl/TT46x9SwX27o89ae9">Δες το στον χάρτη</a></p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024600</p>
+          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>  
+</section>
+
+<!-- FOOTER -->
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2 logo">VIP KEY - SOCIAL</h2>
+              <p style="color: white;">ΒΡΕΙΤΕ ΜΑΣ ΣΤΑ SOCIAL</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="index.html" class="py-2 d-block">ΑΡΧΙΚΗ</a></li>
+                <li><a href="about.html" class="py-2 d-block">ΠΛΗΡΟΦΟΡΙΕΣ</a></li>
+                <li><a href="customers.html" class="py-2 d-block">ΣΥΝΕΡΓΑΤΕΣ</a></li>
+                <li><a href="faqs.html" class="py-2 d-block">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">vipkey2025@hotmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+/* Lightweight Parallax Engine (GPU-friendly, throttled με rAF) */
+(() => {
+  const sections = [...document.querySelectorAll('[data-parallax]')];
+  if (!sections.length) return;
+
+  let ticking = false;
+  const clamp = (v,min,max)=>Math.min(max,Math.max(min,v));
+
+  function update(){
+    ticking = false;
+    const vh = window.innerHeight;
+
+    for (const el of sections){
+      const speed = parseFloat(el.dataset.speed || '0.35'); // 0.2–0.6 συνήθως
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > vh) continue; // εκτός viewport
+
+      // Προσαρμογή offset ώστε η κίνηση να είναι λεία και “διακριτική”
+      const progress = clamp((vh - rect.top) / (vh + rect.height), 0, 1);
+      const offset = (progress - 0.5) * 120 * speed; // px
+      el.style.backgroundPosition = `center calc(50% + ${offset.toFixed(2)}px)`;
+    }
+  }
+
+  function requestTick(){
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  // Respect reduced motion
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (mq.matches) return; // αφήνουμε το CSS fallback
+
+  window.addEventListener('scroll', requestTick, {passive:true});
+  window.addEventListener('resize', requestTick, {passive:true});
+  requestTick();
+})();
+</script>
+
+<script>
+(function(){
+  const grid = document.getElementById('portfolioGrid');
+  const filterBtns = document.querySelectorAll('.filters [data-filter]');
+  let openDetailsEl = null; // ποιο expanded panel είναι ανοιχτό
+
+  // Δημιουργεί/ενημερώνει το expanded details card κάτω από το επιλεγμένο card
+  function openDetailsFor(card){
+    const details = card.querySelector('.details');
+    if(!details) return;
+
+    // Αν υπάρχει ήδη ανοιχτό panel και είναι για το ίδιο card → κλείσimo
+    if(openDetailsEl && openDetailsEl.previousSibling === card){
+      openDetailsEl.remove();
+      openDetailsEl = null;
+      return;
+    }
+
+    // Κλείσε παλιό panel
+    if(openDetailsEl){
+      openDetailsEl.remove();
+      openDetailsEl = null;
+    }
+
+    // Δημιούργησε νέο details node
+    const panel = document.createElement('div');
+    panel.className = 'card--details';
+    panel.innerHTML = `<div class="details-body">${details.innerHTML}</div>`;
+
+    // Βάλε το panel αμέσως μετά το card (στο grid)
+    card.insertAdjacentElement('afterend', panel);
+    openDetailsEl = panel;
+    // optional: scroll στο panel
+    panel.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  // Κλικ σε card → άνοιγμα details
+  grid.addEventListener('click', (e) => {
+    const card = e.target.closest('.card');
+    if(!card || !grid.contains(card)) return;
+    openDetailsFor(card);
+  });
+
+  // Φίλτρα
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const type = btn.dataset.filter; // all | image | video | external
+      const cards = grid.querySelectorAll('.card');
+
+      // κλείσε ανοιχτό panel όταν αλλάζει φίλτρο
+      if(openDetailsEl){ openDetailsEl.remove(); openDetailsEl = null; }
+
+      cards.forEach(c => {
+        const ctype = c.getAttribute('data-type');
+        if(type === 'all' || type === ctype){
+          c.classList.remove('is-hidden');
+        } else {
+          c.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+})();
+</script>
+    
+</body>
+</html>
