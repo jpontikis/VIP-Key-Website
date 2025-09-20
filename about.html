@@ -54,11 +54,52 @@ h1,h2,h3 { margin:0 0 .8rem; font-weight:600; text-transform:uppercase; }
 p { margin:0 0 1rem; }
 
 /* Navbar */
-.navbar { background:#111; padding:.8rem 1rem; }
-.navbar .navbar-brand { color:var(--gold); font-weight:700; font-size:1.2rem; }
-.navbar .nav-link { color:#fff; margin-left:1rem; }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background:#000 !important;
+  padding:.6rem 1rem;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.navbar .navbar-brand { 
+  color:var(--gold) !important; 
+  font-family: 'Montserrat', sans-serif; /* νέα γραμματοσειρά */
+  font-weight: 700;                       /* έντονη */
+  font-size:1.3rem; 
+  letter-spacing: 1px;                    /* προαιρετικό, πιο “premium” */
+}
+
+.navbar .nav-link { 
+  color:var(--gold) !important; 
+  margin-left:1rem; 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
 .navbar .nav-link:hover,
-.navbar .nav-item.active .nav-link { color:var(--gold); }
+.navbar .nav-item.active .nav-link { 
+  color:#fff !important; /* ή var(--gold) αν θες πάντα χρυσό */
+}
+
+/* Κινητό */
+@media (max-width: 991px) {
+  .navbar .navbar-brand {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar .navbar-brand img {
+    margin-right: 8px;
+  }
+}
 
 /* Hero */
 .hero-wrap {
@@ -175,57 +216,94 @@ p { margin:0 0 1rem; }
   font-size: 14px;
 }
 
+.content {
+  font-size: 18px;
+}
+
+/* Μικρότερο μέγεθος σε κινητό */
+@media (max-width: 768px) {
+  .content {
+    font-size: 14px;
+  }
+  .content h2 {
+    font-size: 20px;
+  }
+  .content h3 {
+    font-size: 16px;
+  }
+  .content h4 {
+    font-size: 15px;
+  }
+  .content p, 
+  .content li {
+    font-size: 14px;
+  }
+}
+
+/* Για κινητά (οθόνες μέχρι 768px) */
+@media (max-width: 768px) {
+  .services-section h4 {
+    font-size: 14px; /* μικρότερο κείμενο */
+    margin-bottom: 40px;
+  }
+  
+  .services-section img {
+    height: 100px; /* μικρότερο logo */
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 300px;
+  }
+}
+
 </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar"> 
-		<div class="container"> <a class="navbar-brand" href="index.html"> 
-			<a class="navbar-brand" href="index.html"> 
-				<img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> VIP KEY 
-			</a> 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> <span class="oi oi-menu">
-			</span> Menu </button>
-			<div class="collapse navbar-collapse" id="ftco-nav"> 
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a href="index.html" class="nav-link">Αρχικη</a>
-					</li> 
-					<li class="nav-item">
-						<a href="about.html" class="nav-link">Πληροφοριες</a>
-					</li>
-          			<li class="nav-item">
-						<a href="customers.html" class="nav-link">Συνεργάτες</a>
-					</li> 
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar" id="ftco-navbar"> 
+    <div class="container"> 
+      <a class="navbar-brand" href="index.html"> 
+        <img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> 
+        VIP KEY 
+      </a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> 
+        <span class="oi oi-menu"></span> Menu 
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav"> 
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="index.html" class="nav-link">ΑΡΧΙΚΗ</a>
+          </li> 
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">ΠΛΗΡΟΦΟΡΙΕΣ</a>
           </li>
-          		<li class="nav-item">
-						<a href="faqs.html" class="nav-link">Συχνες Ερωτησεις</a>
-					</li>
-				</ul> 
-			</div> 
-		</div> 
-	</nav>
-	<!-- END NAV -->
-  
-	<!-- HERO -->
-  <section class="hero-wrap" style="background-image:url(images/larissa.jpg);">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="text">
-        <img src="images/VIPlogoNoBcakgrnd.png" alt="VIP Logo" style="height:300px;">
-		<p class="lead" style="font-size:2.5rem;font-weight:700;">AΠΟΚΤΗΣΕ ΤΗΝ VIP KEY</p>
-      </div>
-    </div>
-  </section>
-
+          <li class="nav-item">
+            <a href="customers.html" class="nav-link">ΣΥΝΕΡΓΑΤΕΣ</a>
+          </li>
+          <li class="nav-item">
+            <a href="faqs.html" class="nav-link">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a>
+          </li>
+        </ul> 
+      </div> 
+   </div> 
+  </nav>
+<!-- END NAV -->
+   
   <!-- MIDDLE CONTENT -->
   <section class="content">
     <div class="card">
       <h3 style="color: white; text-align:center;">Πως λειτουργει η VIP KEY</h3>
-      	<h5 class="all-caps" style="text-align:center; color: white;">Αγόρασε την κάρτα μία φορά για 6 μήνες Δείξε την κάρτα σου σε κάθε συνεργαζόμενο κατάστημα πριν πληρώσεις. Κέρδισε την έκπτωση ή την ειδική προσφορά που έχουμε συμφωνήσει με την επιχείρηση. Δεν υπάρχουν πόντοι, κουπόνια ή περίπλοκες διαδικασίες. Με το που δείχνεις την κάρτα σου, κερδίζεις επιτόπου.
+      <p class="all-caps" style="text-align:center; color: white;">Αγόρασε την κάρτα μία φορά για 6 μήνες. Δείξε την κάρτα σου σε κάθε συνεργαζόμενο κατάστημα πριν πληρώσεις. Κέρδισε την έκπτωση ή την ειδική προσφορά που έχουμε συμφωνήσει με την επιχείρηση. Δεν υπάρχουν πόντοι, κουπόνια ή περίπλοκες διαδικασίες. Με το που δείχνεις την κάρτα σου, κερδίζεις επιτόπου.
 			Σταμάτα να πληρώνεις παραπάνω στην πόλη σου – μάθε πώς να κερδίζεις παντού με τη VIP KEY”.
-		</h5>
+      </p>
     </div>
   </section>
 
@@ -241,19 +319,19 @@ p { margin:0 0 1rem; }
 			<div class="icon">
 				<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 			</div>
-			<h4 style="color: white;">Επικοινωνείς μαζί μας – Στέλνεις μήνυμα ή καλείς στο (+30) 6980755756  6982908447</h4>
+			<h5 style="color: white;">Επικοινωνείς μαζί μας – Στέλνεις μήνυμα ή καλείς στο (+30) 6972496968</h5>
 			</article>
 			<article class="card">
 			<div class="icon">
 				<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 			</div>
-			<h4 style="color: white;">Παραλαμβάνεις την κάρτα σου – Σου δίνουμε τη φυσική κάρτα VIP Key</h4>
+			<h5 style="color: white;">Παραλαμβάνεις την κάρτα σου – Σου δίνουμε τη φυσική κάρτα VIP Key</h5>
 			</article>
 			<article class="card">
 			<div class="icon">
 				<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 			</div>
-			<h4 style="color: white;">Ξεκινάς να κερδίζεις – Δείχνεις την κάρτα σου σε κάθε συνεργαζόμενο κατάστημα και απολαμβάνεις τις εκπτώσεις και τα προνόμια.</h4>
+			<h5 style="color: white;">Ξεκινάς να κερδίζεις – Δείχνεις την κάρτα σου σε κάθε συνεργαζόμενο κατάστημα και απολαμβάνεις τις εκπτώσεις και τα προνόμια.</h5>
 			</article>
 		</div>
 	</div>
@@ -264,29 +342,19 @@ p { margin:0 0 1rem; }
     <h2 style="text-align:center; margin-bottom:30px; color:white;">
       οροι χρησης - vip key
     </h2>
-    <p style="text-align:center; font-size:18px; margin-bottom:50px; color:white;">
-      Καλώς ήρθες στο VIP πρόγραμμα της πόλης!
-      Με την κάρτα σου απολαμβάνεις μοναδικά προνόμια σε συνεργαζόμενες επιχειρήσεις.
-    </p>
 
     <h3 style="color:white;">1. Προσωπικη Χρηση</h3>
-    <ul style="color:white;">
       <li style="color:white;">Η κάρτα είναι αυστηρά προσωπική.</li>
       <li style="color:white;">Αναγράφει το όνομα του κατόχου.</li>
       <li style="color:white;">Τα μαγαζιά έχουν το δικαίωμα να ζητήσουν προφορική επιβεβαίωση ονόματος ή επίδειξη ταυτότητας/Instagram για λόγους ταυτοποίησης.</li>
-    </ul>
 
     <h3 style="color:white;">2. Απαγορευση Αναπαραγωγης</h3>
-    <ul style="color:white;">
       <li style="color:white;">Δεν επιτρέπεται η αντιγραφή, κοινή χρήση ή πώληση της κάρτας.</li>
       <li style="color:white;">Αν εντοπιστεί παράβαση, η κάρτα ακυρώνεται χωρίς επιστροφή χρημάτων.</li>
-    </ul>
 
     <h3 style="color:white;">3. Περιοδος Ισχυος</h3>
-    <ul style="color:white;">
       <li style="color:white;">Η VIP κάρτα ισχύει μέχρι <strong>[ΗΜΕΡΟΜΗΝΙΑ ΛΗΞΗΣ]</strong>.</li>
       <li style="color:white;">Θα ενημερώνεσαι για νέες συνεργασίες ή προσφορές μέσω Instagram ή προσωπικού μηνύματος.</li>
-    </ul>
 
     <h3 style="color:white;">4. Απωλεια η Κλοπη Καρτας η Φθορας</h3>
     <p style="color:white;">
@@ -317,34 +385,26 @@ p { margin:0 0 1rem; }
       Η “VIP Key” συλλέγει και αποθηκεύει βασικά στοιχεία των κατόχων της κάρτας, όπως ονοματεπώνυμο, ημερομηνία ενεργοποίησης και μοναδικό κωδικό QR, αποκλειστικά για σκοπούς ελέγχου εγκυρότητας της συνδρομής.  
       Τα δεδομένα αυτά:
     </p>
-    <ul style="color:white;">
       <li style="color:white;">Δε διαβιβάζονται ή κοινοποιούνται σε τρίτους</li>
       <li style="color:white;">Δεν χρησιμοποιούνται για διαφημιστικούς ή εμπορικούς σκοπούς.</li>
-      <li style="color:white;">Αποθηκεύονται με ασφάλεια και διαγράφονται εντός εύλογου διαστήματος μετά τη λήξη της συνδρομής.</li>
-    </ul>
+      <li style="color:white;">Αποθηκεύονται με ασφάλεια και διαγράφονται εντός εύλογου διαστήματος μετά τη λήξη της συνδρομής.</li><br>
     <p style="color:white;">Με τη χρήση της κάρτας, ο κάτοχος συναινεί στη συλλογή και επεξεργασία των ανωτέρω στοιχείων, σύμφωνα με την παρούσα πολιτική.</p>
 
     <h3 style="color:white;">8. ΠΕΡΙΟΡΙΣΜΟΙ ΕΥΘΥΝΗΣ VIP KEY</h3>
-    <ul style="color:white;">
       <li style="color:white;">Δεν ευθύνεται η VIP Key για την ποιότητα, την ασφάλεια ή τη διαθεσιμότητα προϊόντων/υπηρεσιών.</li>
       <li style="color:white;">Η ευθύνη ανήκει αποκλειστικά στην εκάστοτε επιχείρηση.</li>
-    </ul>
 
     <h3 style="color:white;">9. ΔΙΕΥΚΡΙΝΙΣΗ ΜΗ ΧΡΗΣΗΣ ΩΣ ΜΕΣΟ ΠΛΗΡΩΜΗΣ</h3>
-    <ul style="color:white;">
       <li style="color:white;">Η κάρτα δεν είναι μέσο πληρωμής ή πιστωτικό προϊόν.</li>
-    </ul>
+
 
     <h3 style="color:white;">10. ΑΦΑΛΕΙΑ QR ΚΑΙ ΗΛΕΚΤΡΟΝΙΚΟΣ ΕΛΕΓΧΟΣ</h3>
-    <ul style="color:white;">
       <li style="color:white;">Ο κάτοχος αποδέχεται ότι ο μοναδικός κωδικός QR μπορεί να χρησιμοποιηθεί για έλεγχο εγκυρότητας.</li>
       <li style="color:white;">Απαγορεύεται η αντιγραφή/παραποίηση QR</li>
-    </ul>
+
 
     <h3 style="color:white;">11. ΔΙΚΑΙΩΜΑ ΑΚΥΡΩΣΗΣ ΑΠΟ VIP KEY</h3>
-    <ul style="color:white;">
       <li style="color:white;">Η VIP Key μπορεί να ακυρώσει την κάρτα σε περίπτωση απάτης ή παραβίασης των όρων, χωρίς επιστροφή χρημάτων.</li>
-    </ul>
 
     <h3 style="color:white;">12. ΤΡΟΠΟΠΟΙΗΣΗ ΟΡΩΝ</h3>
     <p style="color: white;">Η VIP Key διατηρεί το δικαίωμα να τροποποιήσει τους Όρους Χρήσης οποιαδήποτε στιγμή, με ενημέρωση του χρήστη μέσω των επίσημων καναλιών επικοινωνίας.</p>
@@ -386,7 +446,7 @@ p { margin:0 0 1rem; }
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">(+30) 6972496968</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">vipkey2025@hotmail.com</span></a></li>
 	              </ul>
 	            </div>

@@ -54,12 +54,52 @@ h1,h2,h3 { margin:0 0 .8rem; font-weight:600; text-transform:uppercase; }
 p { margin:0 0 1rem; }
 
 /* Navbar */
-.navbar { background:#111; padding:.8rem 1rem; }
-.navbar .navbar-brand { color:var(--gold); font-weight:700; font-size:1.2rem; }
-.navbar .nav-link { color:#fff; margin-left:1rem; }
-.navbar .nav-link:hover,
-.navbar .nav-item.active .nav-link { color:var(--gold); }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background:#000 !important;
+  padding:.6rem 1rem;
+}
 
+body {
+  padding-top: 70px;
+}
+
+.navbar .navbar-brand { 
+  color:var(--gold) !important; 
+  font-family: 'Montserrat', sans-serif; /* νέα γραμματοσειρά */
+  font-weight: 700;                       /* έντονη */
+  font-size:1.3rem; 
+  letter-spacing: 1px;                    /* προαιρετικό, πιο “premium” */
+}
+
+.navbar .nav-link { 
+  color:var(--gold) !important; 
+  margin-left:1rem; 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-item.active .nav-link { 
+  color:#fff !important; /* ή var(--gold) αν θες πάντα χρυσό */
+}
+
+/* Κινητό */
+@media (max-width: 991px) {
+  .navbar .navbar-brand {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar .navbar-brand img {
+    margin-right: 8px;
+  }
+}
 /* Hero */
 .hero-wrap {
   position:relative;
@@ -257,55 +297,103 @@ p { margin:0 0 1rem; }
   .grid .card li { line-height: 1.5; }
 }
 
+.next-btn-container {
+  text-align: center;
+  margin-top: 40px;
+}
+.next-btn {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.next-btn:hover {
+  background-color: #e6b800;
+}
 
+.content {
+  font-size: 18px;
+}
+
+/* Για κινητά (οθόνες μέχρι 768px) */
+@media (max-width: 768px) {
+  .services-section h4 {
+    font-size: 14px; /* μικρότερο κείμενο */
+    margin-bottom: 40px;
+  }
+  
+  .services-section img {
+    height: 100px; /* μικρότερο logo */
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 300px;
+  }
+}
 </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar"> 
-		<div class="container"> <a class="navbar-brand" href="index.html"> 
-			<a class="navbar-brand" href="index.html"> 
-				<img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> VIP KEY 
-			</a> 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> <span class="oi oi-menu">
-			</span> Menu </button>
-			<div class="collapse navbar-collapse" id="ftco-nav"> 
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a href="index.html" class="nav-link">Αρχικη</a>
-					</li> 
-					<li class="nav-item">
-						<a href="about.html" class="nav-link">Πληροφοριες</a>
-					</li>
+<!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar" id="ftco-navbar"> 
+    <div class="container"> 
+      <a class="navbar-brand" href="index.html"> 
+        <img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> 
+        VIP KEY 
+      </a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> 
+        <span class="oi oi-menu"></span> Menu 
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav"> 
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="index.html" class="nav-link">ΑΡΧΙΚΗ</a>
+          </li> 
           <li class="nav-item">
-						<a href="customers.html" class="nav-link">Συνεργατες</a>
-					</li>
+            <a href="about.html" class="nav-link">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+          </li>
           <li class="nav-item">
-						<a href="faqs.html" class="nav-link">Συχνες Ερωτησεις</a>
-					</li>
-				</ul> 
-			</div> 
-		</div> 
-	</nav>
-	<!-- END NAV -->
+            <a href="customers.html" class="nav-link">ΣΥΝΕΡΓΑΤΕΣ</a>
+          </li>
+          <li class="nav-item">
+            <a href="faqs.html" class="nav-link">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a>
+          </li>
+        </ul> 
+      </div> 
+   </div> 
+  </nav>
+<!-- END NAV -->
   
 	<!-- HERO -->
-  <section class="hero-wrap" style="background-image:url(images/larissa.jpg);">
+ <section class="hero-wrap" style="background-image:url(images/larissaBackground.jpg);">
     <div class="overlay"></div>
     <div class="container">
-      <div class="text">
+      <div class="text"> 
         <img src="images/VIPlogoNoBcakgrnd.png" alt="VIP Logo" style="height:300px;">
-        <p class="lead" style="font-size:2.5rem;font-weight:700;">ΜΕ ΜΙΑ ΚΑΡΤΑ ΟΛΗ Η ΠΟΛΗ ΣΤΑ ΧΕΡΙΑ ΣΟΥ</p>
+        <p class="lead" style="font-size:2rem;font-weight:500;">ΜΕ ΜΙΑ ΚΑΡΤΑ ΟΛΗ Η ΠΟΛΗ ΣΤΑ ΧΕΡΙΑ ΣΟΥ</p>
       </div>
     </div>
-  </section>
+  </section> 
 
   <!-- MIDDLE CONTENT -->
   <section class="content">
     <div class="card">
-      <h3 style="color: white; text-align:center; margin-bottom:50px;">Καλως ηρθες στη VIP KEY</h3>
-      <h5 class="all-caps" style="text-align:center; color: white; margin-bottom:50px;">Η VIP KEY είναι η κάρτα που σου ανοίγει την πόρτα σε περισσότερα: έκπτωση σε φαγητό, ψώνια, ομορφιά και διασκέδαση. Μια κάρτα, δεκάδες συνεργάτες, αμέτρητα προνόμια. Απόκτησέ τη σήμερα και ζήσε την πόλη… με λιγότερα έξοδα</h5>
+      <h2 style="color: white; text-align:center; margin-bottom:50px;">Καλως ηρθες στη VIP KEY</h2>
+      <p class="all-caps" style="text-align:left; color: white; margin-bottom:50px;">Η VIP KEY είναι η κάρτα που σου ανοίγει την πόρτα στις καλύτερες τιμές, έκπτωση σε φαγητό, 
+        ψώνια, ομορφιά και διασκέδαση. Μια κάρτα, δεκάδες συνεργάτες, αμέτρητα προνόμια. 
+        Απόκτησέ τη σήμερα και ζήσε την πόλη… με λιγότερα έξοδα </p>
       <a class="btn" href="about.html">ΑΠΟΚΤΗΣΕ ΤΗ</a>
     </div>
   </section>
@@ -314,7 +402,7 @@ p { margin:0 0 1rem; }
   <section class="services-section">
 	<div class="container text-center">
 		<img src="images/logo1.png" alt="VIP Logo" style="height:150px;">
-		<h2 class="all-caps" style="color: white; margin-bottom:100px;">Με την VIP KEY κερδιζεις</h2>
+		<h3 class="all-caps" style="color: white; margin-bottom:100px;">ΜΕ ΤΗΝ VIP KEY ΚΕΡΔΙΖΕΙΣ</h3>
 		</div>
 		<div class="wrapper">
 		<div class="cards">
@@ -343,7 +431,7 @@ p { margin:0 0 1rem; }
 <!-- PORTFOLIO -->
 <section class="portfolio-section">
   <div class="container">
-    <h2 class="all-caps" style="color:white; text-align:center; ">Μοναδικες προσφορες απο τους συνεργατες της vip key</h2>
+    <h4 class="all-caps" style="color:white; text-align:center; ">ΜΟΝΑΔΙΚΕΣ ΠΡΟΣΦΟΡΕΣ ΑΠΟ ΤΟΥΣ ΣΥΝΕΡΓΑΤΕΣ ΤΗΣ VIP KEY</h4>
     <p style="color:white; text-align:center; margin-bottom:100px;">*Η ΕΚΠΤΩΣΗ ΙΣΧΥΕΙ Μόνο με την επίδειξη της  έγκυρης και ονομαστικής κάρτας VIP KEY στο κατάστημα</p>
     <h5 class="all-caps" style="color:white; text-align:center;">ΚΑΝΕ CLICK ΣΤΟ ΚΑΘΕ ΚΑΤΑΣΤΗΜΑ ΓΙΑ ΝΑ ΑΝΑΚΑΛΥΨΕΙΣ ΤΙΣ ΜΟΝΑΔΙΚΕΣ ΠΡΟΣΦΟΡΕΣ</h5>
 
@@ -351,7 +439,7 @@ p { margin:0 0 1rem; }
     <div class="filters">
       <button class="active" data-filter="all">Συνεργάτες</button>
       <a href="customers.html">
-          <button class="portfolio-btn">Ολοι οι συνεργατες</button>
+          <button class="portfolio-btn">Ολοι οι συνεργάτες</button>
       </a>
     </div>
 
@@ -399,17 +487,18 @@ p { margin:0 0 1rem; }
       </div>
 
 	    <!-- CARD 3 -->
-      <div class="card" data-type="image">
+      <div class="card" data-type="food">
         <img src="images/customers/new cusdtomerLogo/nostimoNew.jpeg" alt="">
         <div class="card-body">
-          <h3>FastFood Nostimo</h3>
+          <h3>Fast Food Nostimo</h3>
         </div>
         <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
         <div class="details" hidden>
-          <h4>FastFood Nostimo</h4>
+          <h4>Fast Food Nostimo</h4>
           <ul>
             <li>-10% για λογαριασμούς άνω των 10€</li>
           </ul>
+          <p>*Ισχύει μόνο για αγορές από το κατάστημα,όχι ντελίβερι</p>
           <p>📍Διεύθυνση: Γεωργάκη Ολυμπίου 2, Ελασσόνα <br> <a href="https://maps.app.goo.gl/phhJhXEcMRVaKTkN9">Δες το στον χάρτη</a></p>
           <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493022843</p>
           <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
@@ -417,14 +506,14 @@ p { margin:0 0 1rem; }
       </div>
 
       <!-- CARD 4 -->
-      <div class="card" data-type="video">
+      <div class="card" data-type="house">
         <img src="images/customers/new cusdtomerLogo/euronicsNew.jpeg" alt="">
         <div class="card-body">
           <h3>Euronics Ζιανος</h3>
         </div>
         <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
         <div class="details" hidden>
-          <h4>Euronics Ζιανός</h4>
+          <h4>Euronics Ζιανος</h4>
           <ul>
             <li>-20% στην αρχική τιμή όλων των ηλεκτρικών συσκευών</li>
             <li>-10% στην αρχική τιμή όλων των τηλεοράσεων</li>
@@ -439,20 +528,20 @@ p { margin:0 0 1rem; }
       </div>
 
        <!-- CARD 5 -->
-      <div class="card" data-type="video">
+      <div class="card" data-type="family">
         <img src="images/customers/new cusdtomerLogo/365New.jpeg" alt="">
         <div class="card-body">
-          <h3>365FitnessClub</h3>
+          <h3>365 Fitness Club</h3>
         </div>
         <div class="details" hidden>
-          <h4>365FitnessClub</h4>
+          <h4>365 Fitness Club</h4>
           <ul>
-            <li>2 μήνες μόνο 75</li>
-            <li>3 μήνες μόνο 100</li>
+            <li>2 μήνες μόνο 75€ (αντί 80€)</li>
+            <li>3 μήνες μόνο 100€ (αντί 120€)</li>
             <li>Διεύθυνση: Τσαριτσάνη</li>
           </ul>
+          <p>📍 Διεύθυνση: Τσαριτσάνη Ελασσόνας <br> <a href="https://maps.app.goo.gl/aasJe1VrLu5Xvek17">Δες το στον χάρτη</a></p>
           <p>Στοιχεία επικοινωνίας καταστήματος : 📞 698 4429754 </p>
-          <p>Υπεύθυνος γυμναστηρίου : Καραμήτσιος Νίκος </p>
           <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
         </div>
       </div>
@@ -471,20 +560,20 @@ p { margin:0 0 1rem; }
           </ul>
           <p>*Η παραπάνω έκπτωση ισχύει μόνο στις αρχικές τιμές των προϊόντων και όχι σε προϊόντα με ήδη έκπτωση </p>
           <p>📍 Διεύθυνση: Τσακάλωφ 9, Ελασσόνα <br> <a href="https://maps.app.goo.gl/zcQpgD8TZTsGwGju5" target="_blank">Δες το στον χάρτη</a></p>
-          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024415</p>
+          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024946</p>
           <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
         </div>
       </div>
 
       <!-- CARD 7 -->
-      <div class="card" data-type="video">
+      <div class="card" data-type="family">
         <img src="images/customers/new cusdtomerLogo/kdapNew.jpeg" alt="">
         <div class="card-body">
           <h3>ΚΔΑΠ ΠΑΙΓΝΙΟΜΑΘΗΣΗ</h3>
         </div>
         <div class="details" hidden>
           <h4>ΚΔΑΠ ΠΑΙΓΝΙΟΜΑΘΗΣΗ</h4>
-          <p>3 Μήνες Παιχνιδομάθηση μόνο με 60€ αντί για 90€!</p>
+          <p>3 Μήνες Παιγνιδομάθηση μόνο με 60€ αντί για 90€!</p>
           <p>📍 Διεύθυνση: Κ. Οικονόμου 63, Ελασσόνα <br> <a href="https://maps.apple/p/oMGcucHj6SuZLw">Δες το στον χάρτη</a></p>
           <p>Στοιχεία επικοινωνίας καταστήματος : 📞 6979088504</p>
           <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
@@ -545,7 +634,7 @@ p { margin:0 0 1rem; }
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+30 6972496968</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">vipkey2025@hotmail.com</span></a></li>
 	              </ul>
 	            </div>
@@ -635,7 +724,7 @@ p { margin:0 0 1rem; }
     const details = card.querySelector('.details');
     if(!details) return;
 
-    // Αν υπάρχει ήδη ανοιχτό panel και είναι για το ίδιο card → κλείσimo
+    // Αν υπάρχει ήδη ανοιχτό panel και είναι για το ίδιο card → κλείσιμο
     if(openDetailsEl && openDetailsEl.previousSibling === card){
       openDetailsEl.remove();
       openDetailsEl = null;
@@ -656,8 +745,9 @@ p { margin:0 0 1rem; }
     // Βάλε το panel αμέσως μετά το card (στο grid)
     card.insertAdjacentElement('afterend', panel);
     openDetailsEl = panel;
-    // optional: scroll στο panel
-    panel.scrollIntoView({behavior:'smooth', block:'start'});
+
+    // 👉 δεν υπάρχει πλέον αυτόματο scroll
+    // panel.scrollIntoView({behavior:'smooth', block:'start'});
   }
 
   // Κλικ σε card → άνοιγμα details
@@ -692,6 +782,5 @@ p { margin:0 0 1rem; }
   });
 })();
 </script>
-    
   </body>
 </html>

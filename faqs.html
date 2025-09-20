@@ -54,11 +54,52 @@ h1,h2,h3 { margin:0 0 .8rem; font-weight:600; text-transform:uppercase; }
 p { margin:0 0 1rem; }
 
 /* Navbar */
-.navbar { background:#111; padding:.8rem 1rem; }
-.navbar .navbar-brand { color:var(--gold); font-weight:700; font-size:1.2rem; }
-.navbar .nav-link { color:#fff; margin-left:1rem; }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background:#000 !important;
+  padding:.6rem 1rem;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.navbar .navbar-brand { 
+  color:var(--gold) !important; 
+  font-family: 'Montserrat', sans-serif; /* νέα γραμματοσειρά */
+  font-weight: 700;                       /* έντονη */
+  font-size:1.3rem; 
+  letter-spacing: 1px;                    /* προαιρετικό, πιο “premium” */
+}
+
+.navbar .nav-link { 
+  color:var(--gold) !important; 
+  margin-left:1rem; 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
 .navbar .nav-link:hover,
-.navbar .nav-item.active .nav-link { color:var(--gold); }
+.navbar .nav-item.active .nav-link { 
+  color:#fff !important; /* ή var(--gold) αν θες πάντα χρυσό */
+}
+
+/* Κινητό */
+@media (max-width: 991px) {
+  .navbar .navbar-brand {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar .navbar-brand img {
+    margin-right: 8px;
+  }
+}
 
 /* Hero */
 .hero-wrap {
@@ -256,66 +297,81 @@ p { margin:0 0 1rem; }
   .grid .card ul { padding-left: 18px; margin: 10px 0 0; }
   .grid .card li { line-height: 1.5; }
 }
+.content {
+  font-size: 18px;
+}
+
+/* Μικρότερο μέγεθος σε κινητό */
+@media (max-width: 768px) {
+  .content {
+    font-size: 14px;
+  }
+  .content h2 {
+    font-size: 20px;
+  }
+  .content h3 {
+    font-size: 16px;
+  }
+  .content p, 
+  .content li {
+    font-size: 14px;
+  }
+}
 
 
 </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar"> 
-		<div class="container"> <a class="navbar-brand" href="index.html"> 
-			<a class="navbar-brand" href="index.html"> 
-				<img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> VIP KEY 
-			</a> 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> <span class="oi oi-menu">
-			</span> Menu </button>
-			<div class="collapse navbar-collapse" id="ftco-nav"> 
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a href="index.html" class="nav-link">Αρχικη</a>
-					</li> 
-					<li class="nav-item">
-						<a href="about.html" class="nav-link">Πληροφοριες</a>
-					</li>
+<!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar" id="ftco-navbar"> 
+    <div class="container"> 
+      <a class="navbar-brand" href="index.html"> 
+        <img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> 
+        VIP KEY 
+      </a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> 
+        <span class="oi oi-menu"></span> Menu 
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav"> 
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="index.html" class="nav-link">ΑΡΧΙΚΗ</a>
+          </li> 
           <li class="nav-item">
-						<a href="customers.html" class="nav-link">Συνεργατες</a>
-					</li>
+            <a href="about.html" class="nav-link">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+          </li>
           <li class="nav-item">
-						<a href="faqs.html" class="nav-link">Συχνες Ερωτησεις</a>
-					</li>
-				</ul> 
-			</div> 
-		</div> 
-	</nav>
-	<!-- END NAV -->
+            <a href="customers.html" class="nav-link">ΣΥΝΕΡΓΑΤΕΣ</a>
+          </li>
+          <li class="nav-item">
+            <a href="faqs.html" class="nav-link">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a>
+          </li>
+        </ul> 
+      </div> 
+   </div> 
+  </nav>
+<!-- END NAV -->
   
   <!-- CONTENT FAQS -->
 	<section class="content">
     <div class="card">
       <h2 style="text-align:center; margin-bottom:30px; color:white;">
-        ΣΥΧΝΕΣ Ερωτησεις - vip key
+        ΣΥΧΝΕΣ Ερωτησεις
       </h2>
 
-      <h3 style="color:white;">1. ΠΟΣΟ ΚΟΣΡΙΖΕΙ Η ΚΑΡΤΑ</h3>
-      <ul style="color:white;">
-        <li style="color:white;">Η τιμή της είναι 20€ και ισχύει για 6 μήνες..</li>
-      </ul>
+      <h3 style="color:white;">1. ΠΟΣΟ ΚΟΣΤΙΖΕΙ Η ΚΑΡΤΑ</h3>
+        <p style="color:white;">Η τιμή της είναι 19.99€ για τους πρώτους 200 και ισχύει για 6 μήνες.</p>
 
-      <h3 style="color:white;">2. ΠΩΣ ΧΡΗΣΙΜΟΠΟΙΟ ΤΗΝ ΚΑΡΤΑ</h3>
-      <ul style="color:white;">
-        <li style="color:white;">Απλά δείξε την κάρτα σου στο ταμείο της συνεργαζόμενης επιχείρησης πριν ολοκληρώσεις την αγορά σου..</li>
-      </ul>
+      <h3 style="color:white;">2. ΠΩΣ ΧΡΗΣΙΜΟΠΟΙΩ ΤΗΝ ΚΑΡΤΑ</h3>
+        <p style="color:white;">Απλά δείξε την κάρτα σου στο ταμείο της συνεργαζόμενης επιχείρησης πριν ολοκληρώσεις την αγορά σου..</p>
 
-      <h3 style="color:white;">3. ΕΙΝΑΙ ΗΑ ΚΑΡΤΑ ΠΡΟΣΩΠΙΚΗ;</h3>
-      <ul style="color:white;">
-        <li style="color:white;">Η VIP κάρτα ισχύει μέχρι <strong>[ΗΜΕΡΟΜΗΝΙΑ ΛΗΞΗΣ]</strong>.</li>
-        <li style="color:white;">Ναι, η κάρτα είναι ονομαστική και ισχύει μόνο για τον κάτοχό της.</li>
-      </ul>
+      <h3 style="color:white;">3. ΕΙΝΑΙ Η ΚΑΡΤΑ ΠΡΟΣΩΠΙΚΗ;</h3>
+        <p style="color:white;">Ναι, η κάρτα είναι ονομαστική και ισχύει μόνο για τον κάτοχό της.</p>
 
       <h3 style="color:white;">4. ΠΩΣ ΜΠΟΡΩ ΝΑ ΑΠΟΚΤΗΣΩ ΤΗΝ ΚΑΡΤΑ;</h3>
       <p style="color:white;">
-        Επικοινώνησε μαζί μας στο [τηλέφωνο] ή μέσω της σελίδας “Απόκτησε την VIP Key”.  
+        Επικοινώνησε μαζί μας στο +30 6972496968 ή μέσω της σελίδας “Απόκτησε την VIP Key”.  
       </p>
 
       <h3 style="color:white;">5. ΠΟΣΕΣ ΕΠΙΧΕΙΡΗΣΕΙΣ ΣΥΜΜΕΤΕΧΟΥΝ</h3>
@@ -334,25 +390,22 @@ p { margin:0 0 1rem; }
       </p>
       
       <h3 style="color:white;">8. ΚΕΡΔΙΖΩ ΑΠΟ ΠΑΝΤΟΥ Η ΜΟΝΟ ΑΠΟ ΣΥΓΚΕΚΡΙΜΕΝΑ ΚΑΤΑΣΤΗΜΑΤΑ;</h3>
-      <ul style="color:white;">
-        <li style="color:white;">Η κάρτα ισχύει σε ΟΛΕΣ τις συνεργαζόμενες επιχειρήσεις. Το κάθε κατάστημα έχει τη δική του προσφορά ή έκπτωση που απολαμβάνεις απλά με την επίδειξη της κάρτας.</li>
-      </ul>
+
+        <p style="color:white;">Η κάρτα ισχύει σε ΟΛΕΣ τις συνεργαζόμενες επιχειρήσεις. Το κάθε κατάστημα έχει τη δική του προσφορά ή έκπτωση που απολαμβάνεις απλά με την επίδειξη της κάρτας.</p>
+  
 
       <h3 style="color:white;">9. ΓΙΑΤΙ ΝΑ ΕΠΙΛΕΞΩ ΤΗΝ VIP KEY ΚΑΙ ΟΧΙ ΜΕΜΟΝΩΜΕΝΕΣ ΠΡΟΣΦΟΡΕΣ;</h3>
-      <ul style="color:white;">
-        <li style="color:white;">Γιατί συγκεντρώνεις δεκάδες συνεργάτες σε μία κάρτα. Δεν ψάχνεις κάθε φορά προσφορές – τις έχεις όλες μαζεμένες, άμεσα διαθέσιμες.</li>
-      </ul>
+      <p style="color:white;">Γιατί συγκεντρώνεις δεκάδες συνεργάτες σε μία κάρτα. Δεν ψάχνεις κάθε φορά προσφορές – τις έχεις όλες μαζεμένες, άμεσα διαθέσιμες.</p>
+   
 
       <h3 style="color:white;">10. ΘΑ ΠΡΟΣΤΕΘΟΥΝ ΝΕΕΣ ΕΠΙΧΕΙΡΗΣΕΙΣ;</h3>
-      <ul style="color:white;">
-        <li style="color:white;">Ναι! Η λίστα μεγαλώνει συνεχώς και ενημερώνεται στο site και στα social μας.</li>
-      </ul>
+      <p style="color:white;">Ναι! Η λίστα μεγαλώνει συνεχώς και ενημερώνεται στο site και στα social μας.</p>
 
       <h3 style="color:white;">11. ΑΝ ΔΕΝ ΜΕΝΩ ΕΛΑΣΣΟΝΑ ΑΞΙΖΕΙ ΝΑ ΤΗΝ ΠΑΡΩ;</h3>
       <p style="color: white;">Αν επισκέπτεσαι συχνά την περιοχή (δουλειά, σπουδές, συγγενείς), τότε συμφέρει απόλυτα. Αλλιώς, μπορείς να περιμένεις την επέκταση σε νέες πόλεις.</p>
 
       <h3 style="color:white;">12. ΥΠΑΡΧΟΥΝ ΚΡΥΦΑ ΕΞΟΔΑ;</h3>
-      <p style="color: white;">Όχι. Πληρώνεις μόνο μία φορά (20€ για 6 μήνες) και απολαμβάνεις τα προνόμια χωρίς επιπλέον χρεώσεις</p>
+      <p style="color: white;">Όχι. Πληρώνεις μόνο μία φορά (19.99€ για 6 μήνες) και απολαμβάνεις τα προνόμια χωρίς επιπλέον χρεώσεις</p>
 
     </div>
   </section>
@@ -388,7 +441,7 @@ p { margin:0 0 1rem; }
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">(+30) 6972496968</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">vipkey2025@hotmail.com</span></a></li>
 	              </ul>
 	            </div>
