@@ -1,0 +1,18 @@
+/* ==========================================
+   VIP KEY – Footer (μαύρο όπως το αρχικό, γράμματα χρυσά)
+   Δεν πειράζουμε διαστάσεις/spacing.
+========================================== */
+.ftco-footer{
+  background: #070708 !important;
+}
+.ftco-footer,
+.ftco-footer p,
+.ftco-footer span,
+.ftco-footer li,
+.ftco-footer a,
+.ftco-footer .ftco-heading-2{
+  color: #CAA25A !important;
+}
+.ftco-footer a:hover{
+  color: #fff !important;
+}

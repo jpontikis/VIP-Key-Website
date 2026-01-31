@@ -1,0 +1,75 @@
+/* ==================================================
+   VIP KEY – Global Theme (Dark Blue + Gold accents)
+   Απαίτηση: background dark blue σε όλες τις σελίδες (εκτός footer)
+   + μία χρυσή λεπτομέρεια στην αρχή και μία στο τέλος (καμία ενδιάμεσα)
+   Σημείωση: Δεν αλλάζουμε μεγέθη/spacing στα στοιχεία.
+================================================== */
+
+:root{
+  --vip-blue: #0b1222;           /* dark blue */
+  --vip-blue-2:#0a1020;
+  --vip-text:#ffffff;
+  --vip-gold:#CAA25A;
+  --vip-gold-2:#D7B46A;
+}
+
+/* Background */
+body{
+  background: var(--vip-blue);
+  color: var(--vip-text);
+}
+
+/* Κείμενα λευκά */
+body, p, span, li, label, small, h1,h2,h3,h4,h5,h6{
+  color: var(--vip-text);
+}
+
+/* Μην “βαφτίζεις” sections με άλλα backgrounds: αφήνουμε body να φαίνεται */
+.ftco-section,
+section,
+.content{
+  background-color: transparent !important;
+}
+
+/* Χρυσές λεπτομέρειες: μόνο 2 γραμμές ανά σελίδα */
+.page-gold-line{
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--vip-gold), var(--vip-gold-2), var(--vip-gold), transparent);
+  opacity: .95;
+}/* Κοινό κουμπί (ίδιο για "Προσθήκη στο καλάθι" + "Δείτε περισσότερα") */
+.vip-btn{
+  display:inline-block;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--vip-gold);
+  background: rgba(0,0,0,.35);
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+.vip-btn:hover{
+  background: rgba(0,0,0,.55);
+  color: #fff !important;
+}/* ✅ Καθαρισμός ανεπιθύμητων “χρυσών” gradients/λωρίδων
+   - Στόχος: κανένα background-image σε sections (εκτός από hero-wrap που έχει larissaBackground)
+   - Κρατάμε μόνο καθαρό dark blue φόντο
+*/
+.ftco-section:not(.hero-wrap),
+section:not(.hero-wrap),
+.content{
+  background-image: none !important;
+}
+
+.hero-wrap{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay: μόνο διαφάνεια, όχι gradients */
+.hero-wrap .overlay,
+.overlay{
+  background: rgba(0,0,0,0.45) !important;
+  background-image: none !important;
+}

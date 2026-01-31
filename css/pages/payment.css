@@ -1,0 +1,96 @@
+/* Payment page only */
+.page-payment .payment-form input,
+.page-payment .payment-form textarea,
+.page-payment .payment-form select{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.15);
+  background: rgba(0,0,0,.18);
+  color:#fff;
+  margin-bottom:12px;
+}
+.page-payment .payment-form textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+/* Form layout + labels */
+.page-payment .payment-form label{
+  display:block;
+  font-size:13px;
+  margin:0 0 6px 2px;
+  opacity:.9;
+}
+
+.page-payment .payment-form .form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 14px;
+}
+
+.page-payment .payment-form .field{ margin:0; }
+
+.page-payment .payment-form input::placeholder,
+.page-payment .payment-form textarea::placeholder{
+  color: rgba(255,255,255,.55);
+}
+
+.page-payment .payment-form input:focus,
+.page-payment .payment-form textarea:focus,
+.page-payment .payment-form select:focus{
+  outline:none;
+  border-color: rgba(202,162,90,.55);
+  box-shadow: 0 0 0 4px rgba(202,162,90,.10);
+}
+
+.page-payment .payment-form select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(202,162,90,.9) 50%),
+    linear-gradient(135deg, rgba(202,162,90,.9) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 2px),
+    calc(100% - 12px) calc(50% - 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat:no-repeat;
+}
+
+/* Consent */
+.page-payment .payment-form .consent{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  margin: 6px 0 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(202,162,90,.22);
+  background: rgba(202,162,90,.06);
+}
+
+.page-payment .payment-form .consent input{
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+}
+
+.page-payment .payment-form .consent span{
+  font-size: 13px;
+  line-height: 1.45;
+  opacity: .92;
+}
+
+@media (max-width: 768px){
+  .page-payment .payment-form .form-grid{ grid-template-columns: 1fr; }
+}
+.page-payment .btn-lock{
+  width:100%;
+  opacity:.65;
+  cursor:not-allowed;
+}
+.page-payment .btn-lock.is-ready{
+  opacity:1;
+  cursor:pointer;
+}

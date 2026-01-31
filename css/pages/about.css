@@ -1,0 +1,13 @@
+/* About page only */
+.page-about .about-split{
+  padding: 6rem 0; /* μεγαλύτερο section */
+}/* Κάρτες "Άμεσο όφελος / Απλότητα / Συνεργασίες" – ίδιο ύψος, μαύρο background, χρυσό περίγραμμα */
+.page-about .about-split .row > .col-md-4{
+  display:flex;
+}
+.page-about .about-split .row > .col-md-4 .card{
+  width:100%;
+  background: #000 !important;
+  border: 1px solid #CAA25A !important;
+  min-height: 170px;
+}

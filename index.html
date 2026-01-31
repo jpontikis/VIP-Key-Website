@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/vip-global.css">
+    <link rel="stylesheet" href="css/vip-footer.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -346,39 +348,80 @@ body {
     max-width: 300px;
   }
 }
+/* PRODUCTS SECTION */
+.product-item {
+  background: #121419;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.product-item h3 {
+  margin: 0 0 8px 0;
+}
+
+.product-item p {
+  margin: 0 0 12px 0;
+  font-weight: bold;
+  color: #fff;
+}
+
+.product-item button {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #caa25a, #000);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.product-item button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,114,255,0.5);
+}
 </style>
 </head>
-<body>
+<body class="page-index">
 
-<!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar" id="ftco-navbar"> 
-    <div class="container"> 
-      <a class="navbar-brand" href="index.html"> 
-        <img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> 
-        VIP KEY 
-      </a> 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> 
-        <span class="oi oi-menu"></span> Menu 
-      </button>
-      <div class="collapse navbar-collapse" id="ftco-nav"> 
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a href="index.html" class="nav-link">ΑΡΧΙΚΗ</a>
-          </li> 
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">ΠΛΗΡΟΦΟΡΙΕΣ</a>
-          </li>
-          <li class="nav-item">
-            <a href="customers.html" class="nav-link">ΣΥΝΕΡΓΑΤΕΣ</a>
-          </li>
-          <li class="nav-item">
-            <a href="faqs.html" class="nav-link">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a>
-          </li>
-        </ul> 
-      </div> 
-   </div> 
-  </nav>
-<!-- END NAV -->
+  <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar" id="ftco-navbar"> 
+      <div class="container"> 
+        <a class="navbar-brand" href="index.html"> 
+          <img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> 
+          VIP KEY 
+        </a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> 
+          <span class="oi oi-menu"></span> Menu 
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav"> 
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link">ΑΡΧΙΚΗ</a>
+            </li> 
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+            </li>
+            <li class="nav-item">
+              <a href="customers.html" class="nav-link">ΣΥΝΕΡΓΑΤΕΣ</a>
+            </li>
+            <li class="nav-item">
+              <a href="faqs.html" class="nav-link">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a>
+            </li>
+            <li class="nav-item cart-item">
+              <a href="payment.html" class="nav-link cart-link">
+                🛒
+              <span id="cart-count">0</span>
+              </a>
+            </li>
+          </ul> 
+        </div> 
+    </div> 
+    </nav>
+    <div class="page-gold-line page-gold-line--top"></div>
+  <!-- END NAV -->
   
 	<!-- HERO -->
  <section class="hero-wrap" style="background-image:url(images/larissaBackground.jpg);">
@@ -432,198 +475,217 @@ body {
 	</div>
   </section>
 
-<!-- PORTFOLIO -->
-<section class="portfolio-section">
-  <div class="container">
-    <h6 class="all-caps" style="color:white; text-align:center;">ΚΑΝΕ CLICK ΣΤΟ ΚΑΘΕ ΚΑΤΑΣΤΗΜΑ ΓΙΑ ΝΑ ΑΝΑΚΑΛΥΨΕΙΣ ΤΙΣ ΜΟΝΑΔΙΚΕΣ ΠΡΟΣΦΟΡΕΣ</h6>
-    <p style="color:white; text-align:center; margin-bottom:100px;">*Η ΕΚΠΤΩΣΗ ΙΣΧΥΕΙ Μόνο με την επίδειξη της  έγκυρης και ονομαστικής κάρτας VIP KEY στο κατάστημα</p>
+  <!-- PRODUCTS -->
+ <div class="products-section content">
+  <div class="card">
+    <h2 style="text-align:center; color: #fff;">Τα Προϊόντα μας</h2>
 
-    <!-- Filters -->
-    <div class="filters">
-      <button class="active" data-filter="all">Συνεργάτες</button>
-      <a href="customers.html">
-          <button class="portfolio-btn">Ολοι οι συνεργάτες</button>
-      </a>
+    <div class="product-item">
+      <h3 style="color: #fff;">VIP Key – Premium Πρόσβαση</h3>
+      <p>20€</p>
+      <button class="vip-btn" onclick="addToCart(1)">Προσθήκη στο καλάθι</button>
     </div>
 
-    <!-- Grid -->
-    <div class="grid" id="portfolioGrid">
-      
-      <!-- CARD 1 -->
-      <div class="card" data-type="video">
-        <img src="images/customers/new cusdtomerLogo/SUPER MARKET SMART.jpg" alt="">
-        <div class="card-body">
-          <h3>Smart Choice Supermarket</h3>
-        </div>
-        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
-        <div class="details" hidden>
-          <h4>Smart Choice Supermarket</h4>
-          <ul>
-            <li>-10% σε όλα τα προϊόντα για αγορές άνω των 50€</li>
-            <li>-15% για αγορές άνω των 100€</li>
-          </ul>
-          <p>*Γάλα και ποτά δεν συμπεριλαμβάνονται στον παραπάνω τζίρο ούτε παίρνουν μέρος στις εκπτώσεις.</p>
-          <p>📍 Διεύθυνση: 6ης Οκτωβρίου, Τσαριτσάνη <br> <a href="https://maps.app.goo.gl/fu5FNzXJkbRLELTU7" target="_blank">Δες το στον χάρτη</a></p>
-          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493081221</p>
-          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
-        </div>
-      </div>
-
-      <!-- CARD 2 -->
-      <div class="card" data-type="family">
-        <img src="images/customers/new cusdtomerLogo/DESSIN.jpg" alt="">
-        <div class="card-body">
-          <h3>DESSIN BOUTIQUE</h3>
-        </div>
-        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
-        <div class="details" hidden>
-          <h4>DESSIN BOUTIQUE</h4>
-          <ul>
-            <li>-30% σε λογαριασμούς άνω των 50€ σε όλα τα προϊόντα </li>
-            <li>-30%  σε  Πλήρες και χειροποίητα πακέτα βάπτισης που περιέχουν: 
-              <p>
-                  Ρούχο ,Παπούτσι + καλτσες  <br>
-                  Λαδοπανα (πετσέτα,λαδοπανο,λαδοεσώρουχα), Λαμπάδα  <br>
-                  Λαδοσετ (3 κεράκια κολυμπήθρας, σαπούνι, πετσέτα ιερέα) <br>
-                  Μαρτυρικά + μαρτυρικά μαμά-νονά κτλ <br>
-                  Βαλίτσα ή κουτί ξύλινο της επιλογής σας ή μπουντουάρ ή παγκάκι ή καρουζέλ κτλ 
-                  Όλα χειροποίητα και όλα με την καλύτερη ποιότητα και τιμή! 
-                  <br>
-                  Στολισμένα όλα ασορτί στο θέμα και χρώμα της επιλογής σας!
-                </p>
-              </li>
-          </ul>
-          <p>*Η παραπάνω έκπτωση ισχύει μόνο στις αρχικές τιμές των προϊόντων και όχι σε προϊόντα με ήδη έκπτωση</p>
-          <p>📍 Διεύθυνση: Γρηγορίου Ε΄, Ελασσόνα<br> <a href="https://maps.app.goo.gl/VHXqf245VL3choCK9">Δες το στον χάρτη</a></p>
-          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493401031</p>
-          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
-        </div>
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="card" data-type="video">
-        <img src="images/customers/new cusdtomerLogo/FRANKLIN.jpg" alt="">
-        <div class="card-body">
-          <h3>Franklin Coffee House</h3>
-        </div>
-        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
-        <div class="details" hidden>
-          <h4>Franklin Coffee House</h4>
-          <ul>
-            <li>Freddo espresso ή cappuccino +Νερό  μόνο 2,30€.  (από 2,70€)</li>
-            <li>Freddo espresso ή cappuccino ΤΕΤΡΑΠΛΟΣ +Νερό μόνο 2,80€</li>
-          </ul>
-          <p>*Ισχύει μονο για αγορές από το κατάστημα , όχι ντελίβερι</p>
-          <p>📍 Διεύθυνση: 6ης Οκτωβρίου, Ελασσόνα <br> <a href="https://maps.app.goo.gl/bZzrwj6TEi46rJgo7" target="_blank">Δες το στον χάρτη</a></p>
-          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024507 – 6987173776</p>
-          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
-        </div>
-      </div>
-
-	   <!-- CARD 4 -->
-      <div class="card" data-type="food">
-        <img src="images/customers/new cusdtomerLogo/nostimoNew.jpeg" alt="">
-        <div class="card-body">
-          <h3>Fast Food Nostimo</h3>
-        </div>
-        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
-        <div class="details" hidden>
-          <h4>Fast Food Nostimo</h4>
-          <ul>
-            <li>-10% για λογαριασμούς άνω των 20€</li>
-          </ul>
-          <p>*Ισχύει μόνο για αγορές από το κατάστημα,όχι ντελίβερι</p>
-          <p>📍Διεύθυνση: Γεωργάκη Ολυμπίου 2, Ελασσόνα <br> <a href="https://maps.app.goo.gl/phhJhXEcMRVaKTkN9">Δες το στον χάρτη</a></p>
-          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493022843</p>
-          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
-        </div>
-      </div>
-
-      <!-- CARD 5 -->
-      <div class="card" data-type="house">
-        <img src="images/customers/new cusdtomerLogo/euronicsNew.jpeg" alt="">
-        <div class="card-body">
-          <h3>Euronics Ζιανος</h3>
-        </div>
-        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
-        <div class="details" hidden>
-          <h4>Euronics Ζιανος</h4>
-          <ul>
-            <li>-20% στην αρχική τιμή όλων των ηλεκτρικών συσκευών</li>
-            <li>-10% στην αρχική τιμή όλων των τηλεοράσεων</li>
-            <li>-20% στην αρχική τιμή όλων των μικροσυσκευών</li>
-          </ul>
-          <p>*Ισχύει μόνο για αγορές απ το κατάστημα </p>
-          <p>*Τα παραπάνω δεν ισχύουν σε προϊόντα με  ήδη έκπτωση</p>
-          <p>📍 Διεύθυνση: Κ. Οικονόμου 60, Ελασσόνα <br> <a href="https://maps.app.goo.gl/LQ8MTxvyVkKMWerQ9" target="_blank">Δες το στον χάρτη</a></p>
-          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024415</p>
-          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
-        </div>
-      </div>
-
-      <!-- CARD 6 -->
-      <div class="card" data-type="family">
-        <img src="images/customers/new cusdtomerLogo/365New.jpeg" alt="">
-        <div class="card-body">
-          <h3>365 Fitness Club</h3>
-        </div>
-        <div class="details" hidden>
-          <h4>365 Fitness Club</h4>
-          <ul>
-            <li>2μηνο πακέτο στα 75€ (αντί 80€)</li>
-            <li>3μηνο πακέτο στα 100€ (αντί 120€)</li>
-          </ul>
-          <p>📍 Διεύθυνση: Τσαριτσάνη Ελασσόνας <br> <a href="https://maps.app.goo.gl/aasJe1VrLu5Xvek17">Δες το στον χάρτη</a></p>
-          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 698 4429754 </p>
-          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
-        </div>
-      </div>
-
-      <!-- CARD 7 -->
-      <div class="card" data-type="family">
-        <img src="images/customers/new cusdtomerLogo/kdapNew.jpeg" alt="">
-        <div class="card-body">
-          <h3>ΚΔΑΠ ΠΑΙΓΝΙΟΜΑΘΗΣΗ</h3>
-        </div>
-        <div class="details" hidden>
-          <h4>ΚΔΑΠ ΠΑΙΓΝΙΟΜΑΘΗΣΗ</h4>
-          <p>3 Μήνες Παιγνιομάθηση μόνο με 60€ αντί για 90€!</p>
-          <p>📍 Διεύθυνση: Κ. Οικονόμου 63, Ελασσόνα <br> <a href="https://maps.apple/p/oMGcucHj6SuZLw">Δες το στον χάρτη</a></p>
-          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 6979088504</p>
-          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
-        </div>
-      </div>
-
-      <!-- CARD 8 -->
-      <div class="card" data-type="video">
-        <img src="images/customers/new cusdtomerLogo/ΑΠΟΣΤΑΚΤΗΡΙΟ.jpg" alt="">
-        <div class="card-body">
-          <h3>καφε - ψησταρια ΑΠΟΣΤΑΚΤΗΡΙΟ</h3>
-        </div>
-        <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
-        <div class="details" hidden>
-          <h4>καφε - ψησταρια ΑΠΟΣΤΑΚΤΗΡΙΟ</h4>
-          <ul>
-            <li>-10% έκπτωση  για λογαριασμούς άνω των 30€</li>
-          </ul>
-          <p>*Η έκπτωση ισχύει για το σύνολο του λογαριασμού του τραπεζιού της ημέρας.</p>
-          <p>*Η έκπτωση είναι -10%, ανεξάρτητα από το πόσα άτομα στο ίδιο τραπέζι διαθέτουν την κάρτα VIP Key.</p>
-          <p>📍 Διεύθυνση: Τσαριτσάνη, Ελασσόνα, 40200<br> <a href="https://maps.app.goo.gl/8S9GGGnWxV37Tvgy9" target="_blank">Δες το στον χάρτη</a></p>
-          <p>Στοιχεία επικοινωνίας καταστήματος : 📞 24930 81218</p>
-          <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
-        </div>
-      </div>
-
-      <div class="next-btn-container" style="text-align: center;">
-        <a href="customers.html" class="next-btn">Δείτε Περισσότερα</a>
-      </div>
-
+    <div class="product-item">
+      <h3 style="color: #fff;">Family Packet</h3>
+      <p>60€</p>
+      <button class="vip-btn" onclick="addToCart(2)">Προσθήκη στο καλάθι</button>
     </div>
-  </div>  
-</section>
+  </div>
+</div>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio-section">
+    <div class="container">
+      <h6 class="all-caps" style="color:white; text-align:center;">ΚΑΝΕ CLICK ΣΤΟ ΚΑΘΕ ΚΑΤΑΣΤΗΜΑ ΓΙΑ ΝΑ ΑΝΑΚΑΛΥΨΕΙΣ ΤΙΣ ΜΟΝΑΔΙΚΕΣ ΠΡΟΣΦΟΡΕΣ</h6>
+      <p style="color:white; text-align:center; margin-bottom:100px;">*Η ΕΚΠΤΩΣΗ ΙΣΧΥΕΙ Μόνο με την επίδειξη της  έγκυρης και ονομαστικής κάρτας VIP KEY στο κατάστημα</p>
+
+      <!-- Filters -->
+      <div class="filters">
+        <button class="active" data-filter="all">Συνεργάτες</button>
+        <!-- <a href="customers.html">
+            <button class="portfolio-btn">Ολοι οι συνεργάτες</button>
+        </a> -->
+      </div>
+
+      <!-- Grid -->
+      <div class="grid" id="portfolioGrid">
+        
+        <!-- CARD 1 -->
+        <div class="card" data-type="video">
+          <img src="images/customers/new cusdtomerLogo/SUPER MARKET SMART.jpg" alt="">
+          <div class="card-body">
+            <h3>Smart Choice Supermarket</h3>
+          </div>
+          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+          <div class="details" hidden>
+            <h4>Smart Choice Supermarket</h4>
+            <ul>
+              <li>-10% σε όλα τα προϊόντα για αγορές άνω των 50€</li>
+              <li>-15% για αγορές άνω των 100€</li>
+            </ul>
+            <p>*Γάλα και ποτά δεν συμπεριλαμβάνονται στον παραπάνω τζίρο ούτε παίρνουν μέρος στις εκπτώσεις.</p>
+            <p>📍 Διεύθυνση: 6ης Οκτωβρίου, Τσαριτσάνη <br> <a href="https://maps.app.goo.gl/fu5FNzXJkbRLELTU7" target="_blank">Δες το στον χάρτη</a></p>
+            <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493081221</p>
+            <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card" data-type="family">
+          <img src="images/customers/new cusdtomerLogo/DESSIN.jpg" alt="">
+          <div class="card-body">
+            <h3>DESSIN BOUTIQUE</h3>
+          </div>
+          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+          <div class="details" hidden>
+            <h4>DESSIN BOUTIQUE</h4>
+            <ul>
+              <li>-30% σε λογαριασμούς άνω των 50€ σε όλα τα προϊόντα </li>
+              <li>-30%  σε  Πλήρες και χειροποίητα πακέτα βάπτισης που περιέχουν: 
+                <p>
+                    Ρούχο ,Παπούτσι + καλτσες  <br>
+                    Λαδοπανα (πετσέτα,λαδοπανο,λαδοεσώρουχα), Λαμπάδα  <br>
+                    Λαδοσετ (3 κεράκια κολυμπήθρας, σαπούνι, πετσέτα ιερέα) <br>
+                    Μαρτυρικά + μαρτυρικά μαμά-νονά κτλ <br>
+                    Βαλίτσα ή κουτί ξύλινο της επιλογής σας ή μπουντουάρ ή παγκάκι ή καρουζέλ κτλ 
+                    Όλα χειροποίητα και όλα με την καλύτερη ποιότητα και τιμή! 
+                    <br>
+                    Στολισμένα όλα ασορτί στο θέμα και χρώμα της επιλογής σας!
+                  </p>
+                </li>
+            </ul>
+            <p>*Η παραπάνω έκπτωση ισχύει μόνο στις αρχικές τιμές των προϊόντων και όχι σε προϊόντα με ήδη έκπτωση</p>
+            <p>📍 Διεύθυνση: Γρηγορίου Ε΄, Ελασσόνα<br> <a href="https://maps.app.goo.gl/VHXqf245VL3choCK9">Δες το στον χάρτη</a></p>
+            <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493401031</p>
+            <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card" data-type="video">
+          <img src="images/customers/new cusdtomerLogo/FRANKLIN.jpg" alt="">
+          <div class="card-body">
+            <h3>Franklin Coffee House</h3>
+          </div>
+          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+          <div class="details" hidden>
+            <h4>Franklin Coffee House</h4>
+            <ul>
+              <li>Freddo espresso ή cappuccino +Νερό  μόνο 2,30€.  (από 2,70€)</li>
+              <li>Freddo espresso ή cappuccino ΤΕΤΡΑΠΛΟΣ +Νερό μόνο 2,80€</li>
+            </ul>
+            <p>*Ισχύει μονο για αγορές από το κατάστημα , όχι ντελίβερι</p>
+            <p>📍 Διεύθυνση: 6ης Οκτωβρίου, Ελασσόνα <br> <a href="https://maps.app.goo.gl/bZzrwj6TEi46rJgo7" target="_blank">Δες το στον χάρτη</a></p>
+            <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024507 – 6987173776</p>
+            <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+          </div>
+        </div>
+
+      <!-- CARD 4 -->
+        <div class="card" data-type="food">
+          <img src="images/customers/new cusdtomerLogo/nostimoNew.jpeg" alt="">
+          <div class="card-body">
+            <h3>Fast Food Nostimo</h3>
+          </div>
+          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+          <div class="details" hidden>
+            <h4>Fast Food Nostimo</h4>
+            <ul>
+              <li>-10% για λογαριασμούς άνω των 20€</li>
+            </ul>
+            <p>*Ισχύει μόνο για αγορές από το κατάστημα,όχι ντελίβερι</p>
+            <p>📍Διεύθυνση: Γεωργάκη Ολυμπίου 2, Ελασσόνα <br> <a href="https://maps.app.goo.gl/phhJhXEcMRVaKTkN9">Δες το στον χάρτη</a></p>
+            <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493022843</p>
+            <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card" data-type="house">
+          <img src="images/customers/new cusdtomerLogo/euronicsNew.jpeg" alt="">
+          <div class="card-body">
+            <h3>Euronics Ζιανος</h3>
+          </div>
+          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+          <div class="details" hidden>
+            <h4>Euronics Ζιανος</h4>
+            <ul>
+              <li>-20% στην αρχική τιμή όλων των ηλεκτρικών συσκευών</li>
+              <li>-10% στην αρχική τιμή όλων των τηλεοράσεων</li>
+              <li>-20% στην αρχική τιμή όλων των μικροσυσκευών</li>
+            </ul>
+            <p>*Ισχύει μόνο για αγορές απ το κατάστημα </p>
+            <p>*Τα παραπάνω δεν ισχύουν σε προϊόντα με  ήδη έκπτωση</p>
+            <p>📍 Διεύθυνση: Κ. Οικονόμου 60, Ελασσόνα <br> <a href="https://maps.app.goo.gl/LQ8MTxvyVkKMWerQ9" target="_blank">Δες το στον χάρτη</a></p>
+            <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024415</p>
+            <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card" data-type="family">
+          <img src="images/customers/new cusdtomerLogo/365New.jpeg" alt="">
+          <div class="card-body">
+            <h3>365 Fitness Club</h3>
+          </div>
+          <div class="details" hidden>
+            <h4>365 Fitness Club</h4>
+            <ul>
+              <li>2μηνο πακέτο στα 75€ (αντί 80€)</li>
+              <li>3μηνο πακέτο στα 100€ (αντί 120€)</li>
+            </ul>
+            <p>📍 Διεύθυνση: Τσαριτσάνη Ελασσόνας <br> <a href="https://maps.app.goo.gl/aasJe1VrLu5Xvek17">Δες το στον χάρτη</a></p>
+            <p>Στοιχεία επικοινωνίας καταστήματος : 📞 698 4429754 </p>
+            <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+          </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="card" data-type="family">
+          <img src="images/customers/new cusdtomerLogo/kdapNew.jpeg" alt="">
+          <div class="card-body">
+            <h3>ΚΔΑΠ ΠΑΙΓΝΙΟΜΑΘΗΣΗ</h3>
+          </div>
+          <div class="details" hidden>
+            <h4>ΚΔΑΠ ΠΑΙΓΝΙΟΜΑΘΗΣΗ</h4>
+            <p>3 Μήνες Παιγνιομάθηση μόνο με 60€ αντί για 90€!</p>
+            <p>📍 Διεύθυνση: Κ. Οικονόμου 63, Ελασσόνα <br> <a href="https://maps.apple/p/oMGcucHj6SuZLw">Δες το στον χάρτη</a></p>
+            <p>Στοιχεία επικοινωνίας καταστήματος : 📞 6979088504</p>
+            <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+          </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="card" data-type="video">
+          <img src="images/customers/new cusdtomerLogo/ΑΠΟΣΤΑΚΤΗΡΙΟ.jpg" alt="">
+          <div class="card-body">
+            <h3>καφε - ψησταρια ΑΠΟΣΤΑΚΤΗΡΙΟ</h3>
+          </div>
+          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
+          <div class="details" hidden>
+            <h4>καφε - ψησταρια ΑΠΟΣΤΑΚΤΗΡΙΟ</h4>
+            <ul>
+              <li>-10% έκπτωση  για λογαριασμούς άνω των 30€</li>
+            </ul>
+            <p>*Η έκπτωση ισχύει για το σύνολο του λογαριασμού του τραπεζιού της ημέρας.</p>
+            <p>*Η έκπτωση είναι -10%, ανεξάρτητα από το πόσα άτομα στο ίδιο τραπέζι διαθέτουν την κάρτα VIP Key.</p>
+            <p>📍 Διεύθυνση: Τσαριτσάνη, Ελασσόνα, 40200<br> <a href="https://maps.app.goo.gl/8S9GGGnWxV37Tvgy9" target="_blank">Δες το στον χάρτη</a></p>
+            <p>Στοιχεία επικοινωνίας καταστήματος : 📞 24930 81218</p>
+            <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
+          </div>
+        </div>
+        <div class="next-btn-container" >
+          <a href="customers.html" class="vip-btn">Δείτε Περισσότερα</a>
+        </div>
+      </div>
+    </div>  
+  </section>
 
 <!-- FOOTER -->
-    <footer class="ftco-footer ftco-section">
+    <div class="page-gold-line page-gold-line--bottom"></div>
+
+<footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md">
@@ -662,7 +724,7 @@ body {
         <div class="row">
           <div class="col-md-12 text-center">
             <p>
-				      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+				      Copyright &copy; <span id="year"></span> All rights reserved
 			      </p>
           </div>
         </div>
@@ -800,5 +862,95 @@ body {
   });
 })();
 </script>
-  </body>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Προϊόντα
+const products = [
+  {
+    id: 1,
+    name: "VIP Key – Premium Πρόσβαση",
+    price: 20
+  },
+  {
+    id: 2,
+    name: "Family Packet",
+    price: 60
+  }
+];
+
+// Προσθήκη προϊόντος στο καλάθι
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  if (!product) return;
+
+  cart.push(product);
+  saveCart();
+}
+
+// Αφαίρεση προϊόντος από cart
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  saveCart();
+}
+
+// Αποθήκευση cart + ενημέρωση counter
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  renderCart();
+}
+
+// Ενημέρωση navbar counter
+function updateCartCount() {
+  const countEl = document.getElementById("cart-count");
+  if (!countEl) return;
+  countEl.innerText = cart.length;
+  countEl.style.display = cart.length > 0 ? "inline-block" : "none";
+}
+
+// Render cart στην payment page
+function renderCart() {
+  const items = document.getElementById("cart-items");
+  const totalEl = document.getElementById("total");
+
+  if (!items || !totalEl) return;
+
+  items.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price;
+    items.innerHTML += `
+      <div class="cart-row">
+        <span>${item.name} - ${item.price}€</span>
+        <button class="remove-btn" onclick="removeFromCart(${index})">✕</button>
+      </div>
+    `;
+  });
+
+  totalEl.innerHTML = `<strong>Σύνολο: ${total}€</strong>`;
+}
+
+// Επιβεβαίωση πληρωμής
+function confirmPayment() {
+  if (cart.length === 0) {
+    alert("Το καλάθι είναι άδειο!");
+    return;
+  }
+
+  alert("Ευχαριστούμε! Θα επιβεβαιώσουμε την πληρωμή σου.");
+  localStorage.removeItem("cart");
+  cart = [];
+  updateCartCount();
+  renderCart();
+}
+
+// Αρχικοποίηση σελίδας
+updateCartCount();
+renderCart();
+</script>
+  <script src="js/vipkey.js" defer></script>
+</body>
 </html>

@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/faqs.css">
+    <link rel="stylesheet" href="css/vip-global.css">
+    <link rel="stylesheet" href="css/vip-footer.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -321,98 +324,116 @@ body {
 
 </style>
 </head>
-<body>
+<body class="page-faqs">
 
-<!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar" id="ftco-navbar"> 
-    <div class="container"> 
-      <a class="navbar-brand" href="index.html"> 
-        <img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> 
-        VIP KEY 
-      </a> 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> 
-        <span class="oi oi-menu"></span> Menu 
-      </button>
-      <div class="collapse navbar-collapse" id="ftco-nav"> 
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a href="index.html" class="nav-link">ΑΡΧΙΚΗ</a>
-          </li> 
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">ΠΛΗΡΟΦΟΡΙΕΣ</a>
-          </li>
-          <li class="nav-item">
-            <a href="customers.html" class="nav-link">ΣΥΝΕΡΓΑΤΕΣ</a>
-          </li>
-          <li class="nav-item">
-            <a href="faqs.html" class="nav-link">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a>
-          </li>
-        </ul> 
-      </div> 
-   </div> 
-  </nav>
-<!-- END NAV -->
+  <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar" id="ftco-navbar"> 
+      <div class="container"> 
+        <a class="navbar-brand" href="index.html"> 
+          <img src="images/logo1.png" alt="VIP Logo" style="height: 40px;" class="mr-2"> 
+          VIP KEY 
+        </a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> 
+          <span class="oi oi-menu"></span> Menu 
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav"> 
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link">ΑΡΧΙΚΗ</a>
+            </li> 
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+            </li>
+            <li class="nav-item">
+              <a href="customers.html" class="nav-link">ΣΥΝΕΡΓΑΤΕΣ</a>
+            </li>
+            <li class="nav-item">
+              <a href="faqs.html" class="nav-link">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</a>
+            </li>
+            <li class="nav-item cart-item">
+              <a href="payment.html" class="nav-link cart-link">
+                🛒
+              </a>
+            </li>
+          </ul> 
+        </div> 
+    </div> 
+    </nav>
+    <div class="page-gold-line page-gold-line--top"></div>
+  <!-- END NAV -->
   
   <!-- CONTENT FAQS -->
 	<section class="content">
-    <div class="card">
-      <h2 style="text-align:center; margin-bottom:30px; color:white;">
-        ΣΥΧΝΕΣ Ερωτησεις
-      </h2>
-
-      <h3 style="color:white;">1. ΠΟΣΟ ΚΟΣΤΙΖΕΙ Η ΚΑΡΤΑ</h3>
-        <p style="color:white;">Η τιμή της είναι 19.99€ για τους πρώτους 200 και ισχύει για 6 μήνες.</p>
-
-      <h3 style="color:white;">2. ΠΩΣ ΧΡΗΣΙΜΟΠΟΙΩ ΤΗΝ ΚΑΡΤΑ</h3>
-        <p style="color:white;">Απλά δείξε την κάρτα σου στο ταμείο της συνεργαζόμενης επιχείρησης πριν ολοκληρώσεις την αγορά σου..</p>
-
-      <h3 style="color:white;">3. ΕΙΝΑΙ Η ΚΑΡΤΑ ΠΡΟΣΩΠΙΚΗ;</h3>
-        <p style="color:white;">Ναι, η κάρτα είναι ονομαστική και ισχύει μόνο για τον κάτοχό της.</p>
-
-      <h3 style="color:white;">4. ΠΩΣ ΜΠΟΡΩ ΝΑ ΑΠΟΚΤΗΣΩ ΤΗΝ ΚΑΡΤΑ;</h3>
-      <p style="color:white;">
-        Επικοινώνησε μαζί μας στο +30 6972496968 ή μέσω της σελίδας “Απόκτησε την VIP Key”.  
+  <div class="container">
+    <div class="card" style="padding: 2.5rem 2rem;">
+      <h2 style="color:white; text-align:center; margin-bottom:1.5rem;">Συχνές Ερωτήσεις</h2>
+      <p style="color:white; opacity:.85; text-align:center; margin-bottom:2rem;">
+        Βρες γρήγορα την απάντηση που ψάχνεις. Αν χρειαστείς βοήθεια, στείλε μας μήνυμα.
       </p>
 
-      <h3 style="color:white;">5. ΠΟΣΕΣ ΕΠΙΧΕΙΡΗΣΕΙΣ ΣΥΜΜΕΤΕΧΟΥΝ</h3>
-      <p style="color:white;">
-        Συνεχώς προστίθενται νέες επιχειρήσεις. Δες όλες τις συνεργασίες μας στην ενότητα «Οι συνεργάτες μας».
-      </p>
+      <div id="faqAccordion" class="faq-accordion">
+        <div class="card">
+          <div class="card-header" id="q1">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#a1" aria-expanded="true" aria-controls="a1" style="width:100%; text-align:left; color:white; font-weight:700;">
+              Πόσο διαρκεί η VIP KEY;
+            </button>
+          </div>
+          <div id="a1" class="collapse show" aria-labelledby="q1" data-parent="#faqAccordion">
+            <div class="card-body" style="color:white; opacity:.85;">
+              Η κάρτα ισχύει για 6 μήνες από τη στιγμή που την παραλαμβάνεις.
+            </div>
+          </div>
+        </div>
 
-      <h3 style="color:white;">6. ΑΞΙΖΕΙ ΠΡΑΓΜΑΤΙΚΑ Η ΚΑΡΤΑ;</h3>
-      <p style="color:white;">
-       Ναι, και με το παραπάνω. Αρκεί να χρησιμοποιείς την VIP Key 2–3 φορές το μήνα, για παράδειγμα σε καφέ, σούπερ μάρκετ ή εστιατόρια, και έχεις ήδη βγάλει το κόστος της κάρτας.
-      </p>
+        <div class="card">
+          <div class="card-header" id="q2">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#a2" aria-expanded="false" aria-controls="a2" style="width:100%; text-align:left; color:white; font-weight:700;">
+              Πώς χρησιμοποιώ την κάρτα στα συνεργαζόμενα καταστήματα;
+            </button>
+          </div>
+          <div id="a2" class="collapse" aria-labelledby="q2" data-parent="#faqAccordion">
+            <div class="card-body" style="color:white; opacity:.85;">
+              Δείχνεις την κάρτα σου πριν την πληρωμή και λαμβάνεις την έκπτωση/προσφορά που ισχύει στο κατάστημα.
+            </div>
+          </div>
+        </div>
 
-      <h3 style="color:white;">7. ΑΝ ΧΑΣΩ ΤΗΝ ΚΑΡΤΑ ΜΟΥ;</h3>
-      <p style="color:white;">
-        Δεν χάνεις τη συνδρομή σου. Επικοινωνείς μαζί μας και εκδίδουμε καινούργια με μικρό κόστος αντικατάστασης.
-      </p>
-      
-      <h3 style="color:white;">8. ΚΕΡΔΙΖΩ ΑΠΟ ΠΑΝΤΟΥ Η ΜΟΝΟ ΑΠΟ ΣΥΓΚΕΚΡΙΜΕΝΑ ΚΑΤΑΣΤΗΜΑΤΑ;</h3>
+        <div class="card">
+          <div class="card-header" id="q3">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#a3" aria-expanded="false" aria-controls="a3" style="width:100%; text-align:left; color:white; font-weight:700;">
+              Μπορώ να δώσω την κάρτα σε άλλον;
+            </button>
+          </div>
+          <div id="a3" class="collapse" aria-labelledby="q3" data-parent="#faqAccordion">
+            <div class="card-body" style="color:white; opacity:.85;">
+              Η κάρτα είναι για προσωπική χρήση. Αν θέλεις δεύτερη κάρτα για άλλο άτομο, μπορείς να προμηθευτείς επιπλέον.
+            </div>
+          </div>
+        </div>
 
-        <p style="color:white;">Η κάρτα ισχύει σε ΟΛΕΣ τις συνεργαζόμενες επιχειρήσεις. Το κάθε κατάστημα έχει τη δική του προσφορά ή έκπτωση που απολαμβάνεις απλά με την επίδειξη της κάρτας.</p>
-  
-
-      <h3 style="color:white;">9. ΓΙΑΤΙ ΝΑ ΕΠΙΛΕΞΩ ΤΗΝ VIP KEY ΚΑΙ ΟΧΙ ΜΕΜΟΝΩΜΕΝΕΣ ΠΡΟΣΦΟΡΕΣ;</h3>
-      <p style="color:white;">Γιατί συγκεντρώνεις δεκάδες συνεργάτες σε μία κάρτα. Δεν ψάχνεις κάθε φορά προσφορές – τις έχεις όλες μαζεμένες, άμεσα διαθέσιμες.</p>
-   
-
-      <h3 style="color:white;">10. ΘΑ ΠΡΟΣΤΕΘΟΥΝ ΝΕΕΣ ΕΠΙΧΕΙΡΗΣΕΙΣ;</h3>
-      <p style="color:white;">Ναι! Η λίστα μεγαλώνει συνεχώς και ενημερώνεται στο site και στα social μας.</p>
-
-      <h3 style="color:white;">11. ΑΝ ΔΕΝ ΜΕΝΩ ΕΛΑΣΣΟΝΑ ΑΞΙΖΕΙ ΝΑ ΤΗΝ ΠΑΡΩ;</h3>
-      <p style="color: white;">Αν επισκέπτεσαι συχνά την περιοχή (δουλειά, σπουδές, συγγενείς), τότε συμφέρει απόλυτα. Αλλιώς, μπορείς να περιμένεις την επέκταση σε νέες πόλεις.</p>
-
-      <h3 style="color:white;">12. ΥΠΑΡΧΟΥΝ ΚΡΥΦΑ ΕΞΟΔΑ;</h3>
-      <p style="color: white;">Όχι. Πληρώνεις μόνο μία φορά (19.99€ για 6 μήνες) και απολαμβάνεις τα προνόμια χωρίς επιπλέον χρεώσεις</p>
+        <div class="card">
+          <div class="card-header" id="q4">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#a4" aria-expanded="false" aria-controls="a4" style="width:100%; text-align:left; color:white; font-weight:700;">
+              Πώς αγοράζω την VIP KEY;
+            </button>
+          </div>
+          <div id="a4" class="collapse" aria-labelledby="q4" data-parent="#faqAccordion">
+            <div class="card-body" style="color:white; opacity:.85;">
+              Επικοινωνείς μαζί μας, ολοκληρώνεις την πληρωμή και παραλαμβάνεις τη φυσική κάρτα VIP KEY.
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
-  </section>
+  </div>
+</section>
   <!-- END CONTENT FAQS -->
 
 <!-- FOOTER -->
-    <footer class="ftco-footer ftco-section">
+    <div class="page-gold-line page-gold-line--bottom"></div>
+
+<footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md">
@@ -451,7 +472,7 @@ body {
         <div class="row">
           <div class="col-md-12 text-center">
             <p>
-				      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+				      Copyright &copy; <span id="year"></span> All rights reserved
 			        </p>
           </div>
         </div>
@@ -589,5 +610,6 @@ body {
 })();
 </script>
     
+  <script src="js/vipkey.js" defer></script>
 </body>
 </html>

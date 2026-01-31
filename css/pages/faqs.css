@@ -1,0 +1,11 @@
+/* FAQs page only */
+.page-faqs .faq-accordion .btn-link{
+  width:100%;
+  text-align:left;
+  color:#fff !important;
+  font-weight:700;
+  text-decoration:none !important;
+}
+.page-faqs .faq-accordion .card-body{
+  color: rgba(255,255,255,.85) !important;
+}
