@@ -9,3 +9,35 @@
 .page-faqs .faq-accordion .card-body{
   color: rgba(255,255,255,.85) !important;
 }
+
+/* Mobile tweaks */
+@media (max-width: 576px){
+  /* Main FAQ card spacing */
+  .page-faqs .content .card{
+    padding: 1.4rem 1rem !important; /* override inline padding */
+  }
+  .page-faqs .content h2{
+    font-size: 1.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .page-faqs .content p{
+    font-size: .95rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* Accordion buttons (questions) */
+  .page-faqs .faq-accordion .btn-link{
+    font-size: .95rem !important;
+    line-height: 1.35;
+    padding: .55rem .8rem !important;
+  }
+  .page-faqs .faq-accordion .card-header{
+    padding: .25rem !important;
+  }
+
+  /* Accordion content (answers) */
+  .page-faqs .faq-accordion .card-body{
+    font-size: .95rem !important;
+    padding: .75rem .9rem !important;
+  }
+}

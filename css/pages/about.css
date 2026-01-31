@@ -11,3 +11,32 @@
   border: 1px solid #CAA25A !important;
   min-height: 170px;
 }
+
+/* Mobile tweaks */
+@media (max-width: 576px){
+  /* About split */
+  .page-about .about-split{
+    padding: 3rem 0 !important; /* override inline padding */
+  }
+  .page-about .about-split h2{
+    font-size: 1.6rem !important;
+  }
+  .page-about .about-split p{
+    font-size: .95rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .page-about .about-split .card{
+    padding: 14px !important; /* override inline padding */
+    font-size: .95rem;
+  }
+
+  /* Any buttons inside about (including CTA at bottom) */
+  .page-about .btn,
+  .page-about .next-btn{
+    font-size: 14px !important;
+  }
+  .page-about .next-btn{
+    padding: 12px 26px !important;
+  }
+}
