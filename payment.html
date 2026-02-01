@@ -1,275 +1,223 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages/payment.css">
+  <link rel="stylesheet" href="css/vip-global.css">
+  <link rel="stylesheet" href="css/vip-footer.css">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+  <title>Πληρωμή – VIP Key</title>
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+  
+  <style>
+    :root{
+      --gold:#caa25a;
+      --bg-main:#0e0f12;
+      --bg-card:#121419;
+      --border-soft:rgba(255,255,255,.06);
+      --radius:16px;
+      --shadow:0 20px 60px rgba(0,0,0,.6);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Segoe UI",sans-serif;
+      background:var(--bg-main);
+      color:#fff;
+    }
+    .content{
+      padding:3rem 1.5rem;
+      background:
+        radial-gradient(80% 60% at 50% 0%, rgba(202,162,90,.12), transparent 60%),
+        linear-gradient(#101216,#0e0f12);
+    }
+    .card,.payment-card{
+      max-width:900px;
+      margin:auto;
+      background:var(--bg-card);
+      border:1px solid var(--border-soft);
+      border-radius:var(--radius);
+      padding:2.5rem;
+      box-shadow:var(--shadow);
+    }
+    .welcome-title{
+      text-align:center;
+      font-size:28px;
+      margin-bottom:2rem;
+    }
+    .welcome-text{
+      font-size:15px;
+      line-height:1.7;
+      opacity:.9;
+    }
+    .icon-divider{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      margin-top:3rem;
+    }
+    .icon-divider::before,.icon-divider::after{
+      content:"";
+      flex:1;
+      height:1px;
+      background:linear-gradient(to right,transparent,rgba(202,162,90,.6),transparent);
+    }
+    .icon-divider span{color:var(--gold);font-size:18px}
 
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pages/payment.css">
-    <link rel="stylesheet" href="css/vip-global.css">
-    <link rel="stylesheet" href="css/vip-footer.css">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<title>Πληρωμή – VIP Key</title>
-<link rel="stylesheet" href="payment.css">
-<style>
-:root {
-  --gold: #caa25a;
-  --bg-main: #0e0f12;
-  --bg-card: #121419;
-  --border-soft: rgba(255,255,255,.06);
-  --radius: 16px;
-  --shadow: 0 20px 60px rgba(0,0,0,.6);
-}
+    .payment-header{
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      margin-bottom:1rem;
+    }
+    .payment-header h2{margin:0;font-size:24px}
 
-/* RESET */
-* {
-  box-sizing: border-box;
-}
+    .back-btn{
+      padding:.55rem .9rem;
+      border-radius:999px;
+      border:1px solid rgba(202,162,90,.35);
+      background:rgba(202,162,90,.08);
+      color:var(--gold);
+      font-size:13px;
+      text-decoration:none;
+      transition:all .2s ease;
+      display:inline-block;
+      margin-bottom:1.5rem;
+    }
+    .back-btn:hover{
+      background:rgba(202,162,90,.18);
+      box-shadow:0 0 0 4px rgba(202,162,90,.08);
+    }
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: var(--bg-main);
-  color: #fff;
-}
+    .cart-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1rem;
+      background:#0e0f12;
+      border-radius:12px;
+      margin-bottom:.75rem;
+    }
+    .cart-row span{font-size:14px}
 
-/* CONTENT */
-.content {
-  padding: 3rem 1.5rem;
-  background:
-    radial-gradient(80% 60% at 50% 0%, rgba(202,162,90,.12), transparent 60%),
-    linear-gradient(#101216, #0e0f12);
-}
+    .remove-btn{
+      background:transparent;
+      border:1px solid rgba(239,68,68,.5);
+      color:#ef4444;
+      padding:.35rem .75rem;
+      border-radius:999px;
+      font-size:12px;
+      cursor:pointer;
+    }
+    .remove-btn:hover{background:rgba(239,68,68,.15)}
 
-/* CARDS */
-.card,
-.payment-card {
-  max-width: 900px;
-  margin: auto;
-  background: var(--bg-card);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-  padding: 2.5rem;
-  box-shadow: var(--shadow);
-}
+    #total{
+      text-align:right;
+      font-size:20px;
+      margin:1.5rem 0;
+      color:var(--gold);
+    }
 
-/* WELCOME */
-.welcome-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 2rem;
-}
+    .methods{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+    }
+    .method{
+      background:#0e0f12;
+      border-radius:14px;
+      padding:1.25rem;
+    }
+    .method h3{margin-top:0;color:var(--gold)}
 
-.welcome-text {
-  font-size: 15px;
-  line-height: 1.7;
-  opacity: .9;
-}
+    .confirm-btn{
+      margin-top:2rem;
+      width:100%;
+      padding:1rem;
+      border-radius:999px;
+      border:none;
+      background:linear-gradient(135deg,#caa25a,#b08a45);
+      color:#0e0f12;
+      font-size:15px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .confirm-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 15px 30px rgba(202,162,90,.35);
+    }
 
-/* ICON DIVIDER */
-.icon-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 3rem;
-}
+    /* μικρό success banner */
+    .success-banner{
+      display:none;
+      margin-bottom:1.25rem;
+      padding:1rem 1.1rem;
+      border-radius:14px;
+      border:1px solid rgba(202,162,90,.35);
+      background:rgba(202,162,90,.08);
+      color:#fff;
+    }
+    .success-banner strong{color:var(--gold)}
 
-.icon-divider::before,
-.icon-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(202,162,90,.6),
-    transparent
-  );
-}
-
-.icon-divider span {
-  color: var(--gold);
-  font-size: 18px;
-}
-
-/* PAYMENT HEADER */
-.payment-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.payment-header h2 {
-  margin: 0;
-  font-size: 24px;
-}
-
-/* BACK BUTTON */
-.back-btn {
-  padding: .55rem .9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(202,162,90,.35);
-  background: rgba(202,162,90,.08);
-  color: var(--gold);
-  font-size: 13px;
-  text-decoration: none;
-  transition: all .2s ease;
-}
-
-.back-btn:hover {
-  background: rgba(202,162,90,.18);
-  box-shadow: 0 0 0 4px rgba(202,162,90,.08);
-}
-
-/* CART */
-.cart-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: #0e0f12;
-  border-radius: 12px;
-  margin-bottom: .75rem;
-}
-
-.cart-row span {
-  font-size: 14px;
-}
-
-/* REMOVE */
-.remove-btn {
-  background: transparent;
-  border: 1px solid rgba(239,68,68,.5);
-  color: #ef4444;
-  padding: .35rem .75rem;
-  border-radius: 999px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.remove-btn:hover {
-  background: rgba(239,68,68,.15);
-}
-
-/* TOTAL */
-#total {
-  text-align: right;
-  font-size: 20px;
-  margin: 1.5rem 0;
-  color: var(--gold);
-}
-
-/* METHODS */
-.methods {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.method {
-  background: #0e0f12;
-  border-radius: 14px;
-  padding: 1.25rem;
-}
-
-.method h3 {
-  margin-top: 0;
-  color: var(--gold);
-}
-
-/* CONFIRM */
-.confirm-btn {
-  margin-top: 2rem;
-  width: 100%;
-  padding: 1rem;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #caa25a, #b08a45);
-  color: #0e0f12;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.confirm-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(202,162,90,.35);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .card,
-  .payment-card {
-    padding: 1.8rem;
-  }
-
-  .methods {
-    grid-template-columns: 1fr;
-  }
-
-  #total {
-    text-align: center;
-  }
-
-  .payment-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-</style>
+    @media(max-width:768px){
+      .card,.payment-card{padding:1.8rem}
+      .methods{grid-template-columns:1fr}
+      #total{text-align:center}
+      .payment-header{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
+
 <body class="page-payment">
 
   <!-- WELCOME SECTION -->
   <section class="content">
     <div class="card">
-
-      <h2 class="welcome-title" style="text-align: center; color: #caa25a;">
+      <h2 class="welcome-title" style="text-align:center;color:#caa25a;">
         Μεθοδος Πληρωμης
       </h2>
 
       <p class="welcome-text">
-        Η VIP KEY είναι η κάρτα που σου ανοίγει την πόρτα στις καλύτερες τιμές,
-        έκπτωση σε φαγητό, ψώνια, ομορφιά και διασκέδαση.
-        Μια κάρτα, δεκάδες συνεργάτες, αμέτρητα προνόμια.
-        Απόκτησέ τη σήμερα και ζήσε την πόλη… με λιγότερα έξοδα.
+        Παρακαλούμε επιλέξτε τον επιθυμητό τρόπο πληρωμής.
+        Με την ολοκλήρωση της κατάθεσης, η ομάδα μας θα επικοινωνήσει μαζί σας για την επιβεβαίωση της πληρωμής και την παράδοση της VIP KEY.
       </p>
 
-      <div class="icon-divider">
-        <span>◆</span>
-      </div>
-
+      <div class="icon-divider"><span>◆</span></div>
     </div>
   </section>
 
   <!-- PAYMENT SECTION -->
   <section class="content">
     <div class="payment-card">
-
       <div class="payment-header">
-        <h2 style="color: #fff;">Ολοκλήρωση Πληρωμής</h2>
+        <h2 style="color:#fff;">Ολοκλήρωση Πληρωμής</h2>
+      </div>
+
+      <!-- ✅ Back button with link -->
+      <a href="index.html" class="back-btn">← Επιστροφή</a>
+
+      <!-- ✅ Banner που εμφανίζεται μετά από επιτυχημένη αποστολή -->
+      <div id="successBanner" class="success-banner">
+        ✅ Η φόρμα στάλθηκε επιτυχώς. Το καλάθι καθαρίστηκε.
       </div>
 
       <div id="cart-items"></div>
@@ -278,13 +226,17 @@ body {
       <div class="methods">
         <div class="method">
           <h3>🏦 Τραπεζική Κατάθεση</h3>
-          <p><strong>IBAN:</strong> GR79 026 032 900 003 502 005 999 03</p>
-          <p><strong>Δικαιούχος:</strong> VIP KEY</p>
+          <p><strong>IBAN:</strong> GR12 0260 3290 00032 0200 9193 19</p>
+          <p><strong>Δικαιούχος:</strong> ΓΙΑΝΝΟΥΛΑΣ ΚΩΝΣΤΑΝΤΙΝΟΣ ΔΗΜΗΤΡΙΟΣ</p>
         </div>
 
         <div class="method">
           <h3>📱 IRIS</h3>
           <p><strong>Τηλέφωνο:</strong> 6972496968</p>
+          <p><strong>Όνομα:</strong> ΚΩΝΣΤΑΝΤΙΝΟΣ ΓΙΑΝΝΟΥΛΑΣ</p>
+          <p>
+            Ολοκληρώστε την παραγγελία σας και θα επικοινωνήσουμε μαζί σας άμεσα για να σας αποστείλουμε τα στοιχεία πληρωμής (ΑΦΜ επιχείρησης) μέσω προσωπικού μηνύματος
+          </p>
         </div>
       </div>
     </div>
@@ -302,15 +254,24 @@ body {
         Συμπλήρωσε τα στοιχεία σου και θα λάβουμε ειδοποίηση στο email μας για να επιβεβαιώσουμε την πληρωμή.
       </p>
 
-      <form class="payment-form" action="https://formsubmit.co/johnpontikis99@gmail.com" method="POST">
-        <!-- FormSubmit options (προαιρετικά) -->
+      <form id="paymentForm" class="payment-form" action="https://formsubmit.co/johnpontikis99@gmail.com" method="POST">
+        <!-- FormSubmit options -->
         <input type="hidden" name="_subject" value="VIP KEY – Νέα φόρμα πληρωμής">
         <input type="hidden" name="_captcha" value="false">
+
+        <!-- ✅ IMPORTANT:
+             Για να καθαρίζει η σελίδα ΑΦΟΥ σταλεί η φόρμα χωρίς να χάνονται τα products,
+             γυρνάμε πίσω ΣΤΗΝ ΙΔΙΑ σελίδα με ?sent=1. -->
+        <input type="hidden" name="_next" value="payment.html?sent=1">
+
+        <!-- ✅ Cart info that will be emailed -->
+        <input type="hidden" name="cart_items" id="cart_items_input">
+        <input type="hidden" name="cart_total" id="cart_total_input">
 
         <div class="form-grid">
           <div class="field">
             <label for="pay_name">Ονοματεπώνυμο</label>
-            <input id="pay_name" type="text" name="name" placeholder="π.χ. Γιώργος Παπαδόπουλος" autocomplete="name" required>
+            <input id="pay_name" type="text" name="name" placeholder="π.χ. Κώστας Παπαδόπουλος" autocomplete="name" required>
           </div>
 
           <div class="field">
@@ -324,6 +285,11 @@ body {
           </div>
 
           <div class="field">
+            <label for="pay_card_name">Card Name</label>
+            <input id="pay_card_name" type="text" name="card_name" placeholder="π.χ. Κώστας Παπαδόπουλος" required>
+          </div>
+
+          <div class="field">
             <label for="pay_method">Τρόπος πληρωμής</label>
             <select id="pay_method" name="payment_method" required>
               <option value="" selected disabled>Επίλεξε…</option>
@@ -333,7 +299,7 @@ body {
           </div>
         </div>
 
-        <div class="field" style="margin-top: 8px;">
+        <div class="field" style="margin-top:8px;">
           <label for="pay_message">Σχόλια / Στοιχεία κατάθεσης (προαιρετικά)</label>
           <textarea id="pay_message" name="message" placeholder="π.χ. Όνομα καταθέτη, ώρα πληρωμής, σημείωση…"></textarea>
         </div>
@@ -343,52 +309,122 @@ body {
           <span>Συμφωνώ με την επεξεργασία των στοιχείων μου για την επιβεβαίωση της αγοράς.</span>
         </label>
 
-        <button class="confirm-btn" type="submit">Αποστολή στοιχείων</button>
+        <button id="submitBtn" class="confirm-btn" type="submit">Αποστολή παραγγελίας</button>
       </form>
-
     </div>
   </section>
 
-<script src="payment.js"></script>
-<script>
+  <script>
+    // -----------------------------
+    // CART RENDER + EMAIL FIELDS
+    // -----------------------------
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function renderCart() {
-  const items = document.getElementById("cart-items");
-  const totalEl = document.getElementById("total");
+    function cartSummaryLines() {
+      // π.χ. "VIP Key - 10€ | VIP Key Gold - 20€"
+      return cart.map(item => `${item.name} - ${item.price}€`).join(" | ");
+    }
 
-  items.innerHTML = "";
-  let total = 0;
+    function calcTotal() {
+      return cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
+    }
 
-  cart.forEach((item, index) => {
-    total += item.price;
-    items.innerHTML += `
-      <div class="cart-row">
-        <span>${item.name}</span>
-        <button class="remove-btn" onclick="remove(${index})">✕</button>
-      </div>
-    `;
-  });
+    function fillHiddenCartFields() {
+      const cartItemsInput = document.getElementById("cart_items_input");
+      const cartTotalInput = document.getElementById("cart_total_input");
 
-  totalEl.innerHTML = `<strong>Σύνολο: ${total}€</strong>`;
-}
+      const total = calcTotal();
+      if (cartItemsInput) cartItemsInput.value = cartSummaryLines() || "Άδειο καλάθι";
+      if (cartTotalInput) cartTotalInput.value = `${total}€`;
+    }
 
-function remove(index) {
-  cart.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart();
-}
+    function renderCart() {
+      const items = document.getElementById("cart-items");
+      const totalEl = document.getElementById("total");
 
-function confirmPayment() {
-  alert("Ευχαριστούμε! Θα επιβεβαιώσουμε την πληρωμή σου.");
-  localStorage.removeItem("cart");
-  window.location.href = "index.html";
-}
+      items.innerHTML = "";
+      const total = calcTotal();
 
-renderCart();
-</script>
-  <script src="js/payment.js"></script>
-  <script src="js/vipkey.js" defer></script>
-  <script src="js/pages/payment.js"></script>
+      cart.forEach((item, index) => {
+        items.innerHTML += `
+          <div class="cart-row">
+            <span>${item.name}</span>
+            <button type="button" class="remove-btn" onclick="removeItem(${index})">✕</button>
+          </div>
+        `;
+      });
+
+      totalEl.innerHTML = `<strong>Σύνολο: ${total}€</strong>`;
+      fillHiddenCartFields();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    // -----------------------------
+    // CLEAR AFTER SUCCESS (sent=1)
+    // -----------------------------
+    function clearEverythingUIAndStorage() {
+      // storage
+      localStorage.removeItem("cart");
+      cart = [];
+
+      // UI
+      const items = document.getElementById("cart-items");
+      const totalEl = document.getElementById("total");
+      if (items) items.innerHTML = "";
+      if (totalEl) totalEl.innerHTML = "";
+
+      // hidden fields (δεν επηρεάζει, είμαστε μετά το submit)
+      const cartItemsInput = document.getElementById("cart_items_input");
+      const cartTotalInput = document.getElementById("cart_total_input");
+      if (cartItemsInput) cartItemsInput.value = "";
+      if (cartTotalInput) cartTotalInput.value = "";
+    }
+
+    // Αν επιστρέψαμε από FormSubmit με ?sent=1 -> καθάρισε τα πάντα
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("sent") === "1") {
+      clearEverythingUIAndStorage();
+      const banner = document.getElementById("successBanner");
+      if (banner) banner.style.display = "block";
+
+      // καθάρισε και το query από το URL (προαιρετικό, πιο “καθαρό”)
+      if (history.replaceState) {
+        history.replaceState(null, "", window.location.pathname);
+      }
+    } else {
+      // Normal load: δείξε cart
+      renderCart();
+    }
+
+    // -----------------------------
+    // SUBMIT HANDLER (DO NOT CLEAR HERE)
+    // Για να μην χαθούν τα products στο email:
+    // - δεν αδειάζουμε cart/inputs στο submit event
+    // - μόνο γεμίζουμε ξανά τα hidden πεδία για σιγουριά
+    // -----------------------------
+    const form = document.getElementById("paymentForm");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", function () {
+      // φρόντισε να είναι σωστά τα hidden fields τη στιγμή του submit
+      fillHiddenCartFields();
+
+      // (προαιρετικό) κλείδωμα κουμπιού για διπλό submit
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Αποστολή παραγγελίας";
+      }
+
+      // Δεν καθαρίζουμε τίποτα εδώ, γιατί αλλιώς θα φύγουν τα products από το email.
+      // Το καθάρισμα γίνεται όταν ξαναγυρίσει η σελίδα με ?sent=1.
+    });
+  </script>
+<script src="js/payment.js"></script>
+<script src="js/vipkey.js" defer></script>
 </body>
 </html>
