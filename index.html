@@ -212,8 +212,6 @@ body {
 .grid .card img {
   width: 100%;
   display: block;
-  /* aspect-ratio: 16/9;  <-- αν το είχες βάλει */
-  /* object-fit: cover;   <-- αν το είχες βάλει */
 }
 .grid .card-body { 
   padding:16px 20px; 
@@ -441,7 +439,7 @@ body {
       <p class="all-caps" style="text-align:left; color: white; margin-bottom:50px;">Η VIP KEY είναι η κάρτα που σου ανοίγει την πόρτα στις καλύτερες τιμές, έκπτωση σε φαγητό, 
         ψώνια, ομορφιά και διασκέδαση. Μια κάρτα, δεκάδες συνεργάτες, αμέτρητα προνόμια. 
         Απόκτησέ τη σήμερα και ζήσε την πόλη… με λιγότερα έξοδα </p>
-      <a class="btn" href="about.html">ΑΠΟΚΤΗΣΕ ΤΗ</a>
+      <a class="btn" href="about.html">ΠΩΣ ΛΕΙΤΟΥΡΓΕΙ</a>
     </div>
   </section>
 
@@ -481,17 +479,22 @@ body {
     <h2 style="text-align:center; color: #fff;">Τα Προϊοντα μας</h2>
 
     <div class="product-item">
-      <h3 style="color: #fff;">VIP KEY - Ψηφιακή κάρτα</h3>
+      <h3 style="color: #fff;">VIP KEY - Ψηφιακη καρτα</h3>
       <p>19,99€</p>
       <p>(Παράδοση 1 ημέρα)</p>
       <button class="vip-btn" onclick="addToCart(1)">Προσθήκη στο καλάθι</button>
     </div>
 
     <div class="product-item">
-      <h3 style="color: #fff;">VIP KEY - Φυσική κάρτα </h3>
+      <h3 style="color: #fff;">VIP KEY - Φυσικη καρτα </h3>
       <p>19,99€</p>
       <p>(Παράδοση  5-7 ημέρες)</p>
       <button class="vip-btn" onclick="addToCart(2)">Προσθήκη στο καλάθι</button>
+    </div>
+
+    <!-- ✅ NEW: View cart button (same design as "Δείτε Περισσότερα") -->
+    <div class="next-btn-container">
+      <a href="payment.html" class="vip-btn">Δες το καλάθι (<span id="cart-count-products">0</span>)</a>
     </div>
   </div>
 </div>
@@ -519,16 +522,18 @@ body {
           <div class="card-body">
             <h3>Smart Choice Supermarket</h3>
           </div>
-          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
           <div class="details" hidden>
             <h4>Smart Choice Supermarket</h4>
             <ul>
               <li>-10% σε όλα τα προϊόντα για αγορές άνω των 50€</li>
               <li>-15% για αγορές άνω των 100€</li>
             </ul>
-            <p>Με κάθε αγορά από 5€, μαζεύεις 4 πόντους. Στο τέλος του μήνα, αν έχεις 100 πόντους, παίρνεις 10% έκπτωση στην επόμενη αγορά σου!</p>
-            <p>Ψωνίζεις – μαζεύεις πόντους – κερδίζεις. Διπλό κέρδος για τα μέλη της VIP Key!</p>
             <p>*Γάλα και ποτά δεν συμπεριλαμβάνονται στον παραπάνω τζίρο ούτε παίρνουν μέρος στις εκπτώσεις.</p>
+            <p>Το Smart  Choice προσθέτει έξτρα ανταμοιβή για όσους ψωνίζουν συχνά</p>
+            <ul>
+              <li>Με κάθε αγορά από 5€, μαζεύεις 4 πόντους. Στο τέλος του μήνα, αν έχεις 100 πόντους, παίρνεις 10% έκπτωση στην επόμενη αγορά σου!</li>
+            </ul>
+            <p>Ψωνίζεις – μαζεύεις πόντους – κερδίζεις. Διπλό κέρδος για τα μέλη της VIP Key!</p>
             <p>📍 Διεύθυνση: 6ης Οκτωβρίου, Τσαριτσάνη <br> <a href="https://maps.app.goo.gl/fu5FNzXJkbRLELTU7" target="_blank">Δες το στον χάρτη</a></p>
             <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493081221</p>
             <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
@@ -541,19 +546,18 @@ body {
           <div class="card-body">
             <h3>DESSIN BOUTIQUE</h3>
           </div>
-          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
           <div class="details" hidden>
             <h4>DESSIN BOUTIQUE</h4>
             <ul>
               <li>-30% σε λογαριασμούς άνω των 50€ σε όλα τα προϊόντα </li>
               <li>-30%  σε  Πλήρες και χειροποίητα πακέτα βάπτισης που περιέχουν: 
                 <p>
-                    Ρούχο ,Παπούτσι + καλτσες  <br>
-                    Λαδοπανα (πετσέτα,λαδοπανο,λαδοεσώρουχα), Λαμπάδα  <br>
-                    Λαδοσετ (3 κεράκια κολυμπήθρας, σαπούνι, πετσέτα ιερέα) <br>
-                    Μαρτυρικά + μαρτυρικά μαμά-νονά κτλ <br>
+                    Ρούχο ,Παπούτσι + καλτσες  <br>
+                    Λαδοπανα (πετσέτα,λαδοπανο,λαδοεσώρουχα), Λαμπάδα  <br>
+                    Λαδοσετ (3 κεράκια κολυμπήθρας, σαπούνι, πετσέτα ιερέα) <br>
+                    Μαρτυρικά + μαρτυρικά μαμά-νονά κτλ <br>
                     Βαλίτσα ή κουτί ξύλινο της επιλογής σας ή μπουντουάρ ή παγκάκι ή καρουζέλ κτλ 
-                    Όλα χειροποίητα και όλα με την καλύτερη ποιότητα και τιμή! 
+                    Όλα χειροποίητα και όλα με την καλύτερη ποιότητα και τιμή! 
                     <br>
                     Στολισμένα όλα ασορτί στο θέμα και χρώμα της επιλογής σας!
                   </p>
@@ -572,11 +576,10 @@ body {
           <div class="card-body">
             <h3>Franklin Coffee House</h3>
           </div>
-          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
           <div class="details" hidden>
             <h4>Franklin Coffee House</h4>
             <ul>
-              <li>Freddo espresso ή cappuccino +Νερό  μόνο 2,30€.  (από 2,70€)</li>
+              <li>Freddo espresso ή cappuccino +Νερό  μόνο 2,30€.  (από 2,70€)</li>
               <li>Freddo espresso ή cappuccino ΤΕΤΡΑΠΛΟΣ +Νερό μόνο 2,80€</li>
             </ul>
             <p>*Ισχύει μονο για αγορές από το κατάστημα , όχι ντελίβερι</p>
@@ -592,7 +595,6 @@ body {
           <div class="card-body">
             <h3>Fast Food Nostimo</h3>
           </div>
-          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
           <div class="details" hidden>
             <h4>Fast Food Nostimo</h4>
             <ul>
@@ -611,7 +613,6 @@ body {
           <div class="card-body">
             <h3>Euronics Ζιανος</h3>
           </div>
-          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
           <div class="details" hidden>
             <h4>Euronics Ζιανος</h4>
             <ul>
@@ -620,7 +621,7 @@ body {
               <li>-20% στην αρχική τιμή όλων των μικροσυσκευών</li>
             </ul>
             <p>*Ισχύει μόνο για αγορές απ το κατάστημα </p>
-            <p>*Τα παραπάνω δεν ισχύουν σε προϊόντα με  ήδη έκπτωση</p>
+            <p>*Τα παραπάνω δεν ισχύουν σε προϊόντα με  ήδη έκπτωση</p>
             <p>📍 Διεύθυνση: Κ. Οικονόμου 60, Ελασσόνα <br> <a href="https://maps.app.goo.gl/LQ8MTxvyVkKMWerQ9" target="_blank">Δες το στον χάρτη</a></p>
             <p>Στοιχεία επικοινωνίας καταστήματος : 📞 2493024415</p>
             <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
@@ -666,11 +667,10 @@ body {
           <div class="card-body">
             <h3>καφε - ψησταρια ΑΠΟΣΤΑΚΤΗΡΙΟ</h3>
           </div>
-          <!-- Κρυφό περιεχόμενο που θα εμφανιστεί στο expanded panel -->
           <div class="details" hidden>
             <h4>καφε - ψησταρια ΑΠΟΣΤΑΚΤΗΡΙΟ</h4>
             <ul>
-              <li>-10% έκπτωση  για λογαριασμούς άνω των 30€</li>
+              <li>-10% έκπτωση  για λογαριασμούς άνω των 30€</li>
             </ul>
             <p>*Η έκπτωση ισχύει για το σύνολο του λογαριασμού του τραπεζιού της ημέρας.</p>
             <p>*Η έκπτωση είναι -10%, ανεξάρτητα από το πόσα άτομα στο ίδιο τραπέζι διαθέτουν την κάρτα VIP Key.</p>
@@ -679,9 +679,11 @@ body {
             <p>Με την VIP Key έχεις πρόσβαση σε προνόμια που ισχύουν αποκλειστικά για μέλη. Κάθε επίσκεψή σου στο κατάστημα είναι μια ξεχωριστή εμπειρία.</p>
           </div>
         </div>
+
         <div class="next-btn-container" >
           <a href="customers.html" class="vip-btn">Δείτε Περισσότερα</a>
         </div>
+
       </div>
     </div>  
   </section>
@@ -734,6 +736,7 @@ body {
         </div>
       </div>
     </footer>
+
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
@@ -755,6 +758,7 @@ body {
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+
   <script>
 /* Lightweight Parallax Engine (GPU-friendly, throttled με rAF) */
 (() => {
@@ -829,9 +833,6 @@ body {
     // Βάλε το panel αμέσως μετά το card (στο grid)
     card.insertAdjacentElement('afterend', panel);
     openDetailsEl = panel;
-
-    // 👉 δεν υπάρχει πλέον αυτόματο scroll
-    // panel.scrollIntoView({behavior:'smooth', block:'start'});
   }
 
   // Κλικ σε card → άνοιγμα details
@@ -906,12 +907,20 @@ function saveCart() {
   renderCart();
 }
 
-// Ενημέρωση navbar counter
+// ✅ UPDATED: Ενημέρωση navbar counter + products counter
 function updateCartCount() {
-  const countEl = document.getElementById("cart-count");
-  if (!countEl) return;
-  countEl.innerText = cart.length;
-  countEl.style.display = cart.length > 0 ? "inline-block" : "none";
+  // Navbar counter
+  const navCountEl = document.getElementById("cart-count");
+  if (navCountEl) {
+    navCountEl.innerText = cart.length;
+    navCountEl.style.display = cart.length > 0 ? "inline-block" : "none";
+  }
+
+  // Products button counter
+  const productsCountEl = document.getElementById("cart-count-products");
+  if (productsCountEl) {
+    productsCountEl.innerText = cart.length;
+  }
 }
 
 // Render cart στην payment page
@@ -955,6 +964,7 @@ function confirmPayment() {
 updateCartCount();
 renderCart();
 </script>
+
   <script src="js/vipkey.js" defer></script>
 </body>
 </html>
